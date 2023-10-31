@@ -1,6 +1,9 @@
 <template>
   <div id="baner">
     <div class="baner container">
+
+
+
       <div class="baner-text">
         <div class="baner__title">
           Автоматизируйте лабораторию легко!
@@ -8,7 +11,7 @@
         <div class="baner__subtitle">
           Первая лабораторная система, полностью интегрированная с ФГИС росаккредитации
         </div>
-        <button class="btns baner__btn">Протестировать</button>
+        <button type="button" class="btns baner__btn" @click="showDemo" >Протестировать</button>
       </div>
       <div class="about">
         <div class="about__title maintitle">Что такое ULAB</div>
@@ -30,8 +33,21 @@
   </div>
 </template>
 <script>
+
 export default {
-  name: "Baner"
+  name: "Baner",
+  data () {
+    return{
+
+    }
+
+
+  },
+  methods:{
+    showDemo(){
+      this.$emit('showDemo')
+    }
+  }
 }
 </script>
 <style scoped>
@@ -92,6 +108,10 @@ export default {
 
 
 
+}
+
+.baner__btn{
+  color: black;
 }
 
 

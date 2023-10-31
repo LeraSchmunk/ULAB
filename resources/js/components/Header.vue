@@ -15,9 +15,10 @@
     </ul>
     <div class="navbar__buttons ">
       <div class="btns wtsapp">
-        <button class="btns wtsapp-btn">
+        <a :href="whatsapp">
+          <button class="btns wtsapp-btn" >
           <img src="../../../public/img/whatsapp.png" alt="whatsapp">
-        </button>
+        </button></a>
       </div>
       <div class="contact">
         <button class="btns contact-btn">Связаться</button>
@@ -30,8 +31,14 @@
 
 <script>
 export default {
-  name: "Header"
+  data:()=>({
+  whatsapp:"https://wa.me/+79966908099"
+
+}),
+  name: "Header",
+
 }
+
 </script>
 
 <style scoped>

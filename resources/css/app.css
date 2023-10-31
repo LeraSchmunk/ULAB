@@ -60,3 +60,65 @@ li {
 .save-btn img {
     padding-right: 15px;
 }
+
+.overlay {
+    position: fixed;
+    content: ' ';
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .7);
+}
+
+.modal__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    color: black;
+}
+
+.modal-subtitle {
+    margin-bottom: 30px;
+}
+
+.modal {
+    padding: 20px;
+    width: 500px;
+    /* height: 500px; */
+    margin: 0 auto;
+    background-image: url('../../../public/img/modal-background.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 150%;
+    position: fixed;
+    top: 20%;
+    left: 30%;
+    color: black;
+    border: 3px solid white;
+    text-align: left;
+}
+
+.modal__body {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal__body input {
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+.send-btn {
+    height: 40px;
+    border: 1px solid white;
+    width: 100%;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.close-btn {
+    cursor: pointer;
+}

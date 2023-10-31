@@ -4,7 +4,7 @@
       <div class="work">
         <img src="../../../public/img/logo.png" alt="">
         <div class="maintitle">Порядок проведения работ по внедрению U-LAB</div>
-        <button class="btns baner__btn">Запросить демонстрацию</button>
+        <button class="btns baner__btn" @click="showDemo">Запросить демонстрацию</button>
       </div>
       <div class="work__scheme">
         <div class="work-titel work01">
@@ -37,7 +37,12 @@
 
 <script>
 export default {
-  name: "Work"
+  name: "Work",
+  methods:{
+    showDemo(){
+      this.$emit('showDemo')
+    }
+  }
 }
 </script>
 <style scoped>

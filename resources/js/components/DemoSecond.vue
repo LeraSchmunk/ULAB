@@ -10,11 +10,11 @@
               <span>А также</span> интеграция с внешними системами, Формирование отчетности, Личный кабинет заказчика и прочие. <br> <br>
               Всего более <span>50 модулей</span>, отвечающих за хранение, обработку и предоставление данных о деятельности лаборатории. <u>Сведения, необходимые для эксплуатации ЛИМС U-LAB (инструкция пользователя)</u>
               <div class="demo__subtitle">
-                <button class="btns baner__btn">Запросить демонстрацию</button>
-                <div class="save-btn">
-            <img src="../../../public/img/save-yellow.png" alt="">
-          <button class="download">  Скачать полный список возможностей</button>
-          </div>
+                <button class="btns baner__btn" @click="showDemo">Запросить демонстрацию</button>
+                <div class="save-btn" >
+                  <img src="../../../public/img/save-yellow.png" alt="">
+                  <button class="download" @click="showModules">  Скачать полный список модулей</button>
+                </div>
               </div>
             </div>
 
@@ -26,7 +26,17 @@
 
 <script>
 export default {
-  name: "DemoSecond"
+  name: "DemoSecond",
+  methods:{
+    showDemo(){
+      this.$emit('showDemo')
+    },
+
+    showModules(){
+      this.$emit('showModules')
+      console.log('ok');
+    }
+  }
 }
 </script>
 <style scoped>

@@ -6,10 +6,10 @@
           Больше 50 лабораторий внедряют ulab
         </div>
         <div class="demo__subtitle">
-          <button class="btns baner__btn">Запросить демонстрацию</button>
+          <button class="btns baner__btn"  @click="showDemo">Запросить демонстрацию</button>
           <div class="save-btn">
             <img src="../../../public/img/save-pink.png" alt="">
-          <button class="download">  Скачать полный список возможностей</button>
+          <button class="download" @click="showPossibilities">  Скачать полный список возможностей</button>
           </div>
         </div>
       </div>
@@ -55,7 +55,17 @@
 
 <script>
 export default {
-  name: "Demo"
+  name: "Demo",
+  methods:{
+    showDemo(){
+      this.$emit('showDemo')
+    },
+
+    showPossibilities(){
+      this.$emit('showPossibilities')
+      console.log('ok');
+    }
+  }
 }
 </script>
 <style scoped>

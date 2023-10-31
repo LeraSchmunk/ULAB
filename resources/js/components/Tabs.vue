@@ -3,20 +3,21 @@
     <!-- <div class="container "> -->
       <div class="tabs ">
           <div class="tabs__nav ">
-              <button class="active " >Для руководителя<br> лаборатории</button>
-              <button>Для лаборанта и СМК</button>
-              <button>Для менеджера по<br> работе с клиентами</button>
-              <button>Для клиента лаборатории</button>
+              <button  @click="setActive ('tab-4')">Для руководителя<br> лаборатории</button>
+              <button  @click="setActive ('tab-5')">Для лаборанта и СМК</button>
+              <button  @click="setActive ('tab-6')">Для менеджера по<br> работе с клиентами</button>
+              <button  @click="setActive ('tab-7')">Для клиента лаборатории</button>
           </div>
 
         <div class="container tabs__item ">
+
             <div class="tabs__item-column ">
-                <h4>ULAB руководителю</h4>
-                <h4>Отчеты о деятельности лаборатории</h4>
-                <h4>Взаимодействие с данными</h4>
+                <div @click="setActive ('tab-1')" ><h4 class="tab" >ULAB руководителю</h4></div>
+                <div @click="setActive ('tab-2')" ><h4 class="tab" >Отчеты о деятельности лаборатории</h4></div>
+                <div @click="setActive ('tab-3')" ><h4 class="tab" >Взаимодействие с данными</h4></div>
             </div>
 
-                <div class="tabs__desc ">
+                <div class="tabs__desc" v-show="isActive('tab-1')">
                     <div class="tabs__desc-text ">— Контроль сотрудников, деятельность лаборатории</div><br>
                     <div class="tabs__desc-text ">— Автоматизация и повышение производительности</div><br>
                     <div class="tabs__desc-text ">— Снижение человеческого фактора: контроль параметров проведения испытания (температура, влажность в помещении, статус поверки оборудования и прочее)</div><br>
@@ -24,6 +25,18 @@
                     <div class="tabs__desc-text ">— Планирование деятельности лаборатории: загруженность сотрудников и оборудования, финансовое планирование</div><br>
                     <div class="tabs__desc-text ">— Повышение лояльности клиентов: личный кабинет, реестр выданных документов</div><br>
                     <div class="tabs__desc-text ">— Обеспечение беспристрастностии конфиденциальности испытаний</div><br>
+                </div>
+                <div class="tabs__desc" v-show="isActive('tab-2')">
+                    <div class="tabs__desc-text ">— Финансовая и управленческая отчетность </div><br>
+                    <div class="tabs__desc-text ">— Отчеты о КПД сотрудников     </div><br>
+                    <div class="tabs__desc-text ">— Отчеты о применяемых методиках    </div><br>
+                    <div class="tabs__desc-text ">— Отчеты по клиентам: финансы, виды материалов, методики, производители продукции </div><br>
+                </div>
+                <div class="tabs__desc" v-show="isActive('tab-3')">
+                    <div class="tabs__desc-text ">— Сведения о заявках на испытания (каналы продаж) </div><br>
+                    <div class="tabs__desc-text ">— Реестр документов (ТЗ, счета, договоры, оплаты)</div><br>
+                    <div class="tabs__desc-text ">— Сведения об испытаниях (журналы, результаты, документы)   </div><br>
+                    <div class="tabs__desc-text ">— Формирование закрывающих документов (интеграция с 1С)</div><br>
                 </div>
         </div>
     </div>
@@ -38,7 +51,33 @@
 </template>
 <script>
 export default {
-  name: "Tabs"
+  name: "Tabs",
+  data:()=>({
+        activeTab: 'tab-1',
+    }),
+    methods: {
+        setActive(tab){
+            this.activeTab = tab
+        },
+        isActive(tab){
+            return this.activeTab === tab;
+        },
+
+    },
+
+  // data:()=>({
+  //       activeTab: 'tab-1',
+  //   }),
+  //   methods: {
+  //       setActive(tab){
+  //           this.activeTab = tab
+  //       },
+  //       isActive(){
+  //           return this.activeTab === tab;
+  //       },
+
+  //   },
+
 }
 </script>
 <style scoped>
@@ -93,6 +132,11 @@ export default {
 
     /* padding: 199px 0 349px 0; */
 }
+
+.tab{
+  cursor: pointer;
+}
+
 
 
 </style>

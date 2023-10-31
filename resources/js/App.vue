@@ -1,19 +1,22 @@
 <template>
   <div id="app">
     <Header></Header>
-    <Baner></Baner>
-    <Demo></Demo>
+    <Baner @showDemo="showDemoModal"></Baner>
+    <Demo @showDemo="showDemoModal" @showPossibilities="showPossibilitiesModal" ></Demo>
     <Tabs></Tabs>
     <Base></Base>
-    <DemoSecond></DemoSecond>
+    <DemoSecond @showDemo="showDemoModal" @showModules="showModulesModal" ></DemoSecond>
     <Keys></Keys>
-    <Work></Work>
+    <Work @showDemo="showDemoModal"></Work>
     <Differences></Differences>
     <!-- <Projects></Projects> -->
-    <Prices></Prices>
+    <Prices @showDemo="showDemoModal"></Prices>
 
     <!-- <BanerLower></BanerLower> -->
     <Footer></Footer>
+    <ModalDemo v-if="showDemoVisible" @closeDemo="closeDemoModal"></ModalDemo>
+    <ModalPossibilities v-if="showPossibilitiesVisible" @closePossibilities="closePossibilitiesModal"></ModalPossibilities>
+    <ModalModules v-if="showModulesVisible" @closeModules="closeModulesModal"></ModalModules>
   </div>
 </template>
 <script>
@@ -33,11 +36,55 @@ import Projects from "./components/Projects.vue";
 import Demo from "./components/Demo.vue";
 import BanerLower from "./components/BanerLower.vue";
 import Footer from "./components/Footer.vue";
+import ModalDemo from './components/ModalDemo.vue';
+import ModalPossibilities from'./components/ModalPossibilities.vue';
+import ModalModules from'./components/ModalModules.vue';
+
 export default {
     name: "App",
     components: {
-      Header, Baner, Tabs, Base, Slider, Projects, Demo, BanerLower, Footer, DemoSecond, Keys, Work, Differences, Prices
-    }}
+      Header, Baner, Tabs, Base, Slider, Projects, Demo, BanerLower, Footer, DemoSecond, Keys, Work, Differences, Prices,
+        ModalDemo, ModalPossibilities, ModalModules
+    },
+
+    emits: ['click1', 'click2'],
+
+    data () {
+      return{
+        showDemoVisible:false,
+        showPossibilitiesVisible:false,
+        showModulesVisible:false,
+
+      }
+    },
+  methods: {
+    showDemo(){
+      this.showDemoVisible=true
+      console.log('dghskl')
+    },
+
+    closeDemoModal(){
+      this.showDemoVisible=false
+    },
+    showDemoModal(){
+      this.showDemoVisible=true,
+      console.log('djkhfk')
+    },
+    closePossibilitiesModal(){
+      this.showPossibilitiesVisible=false
+    },
+    showPossibilitiesModal(){
+      this.showPossibilitiesVisible=true
+    },
+    showModulesModal(){
+      this.showModulesVisible=true
+    },
+    closeModulesModal(){
+      this.showModulesVisible=false
+    },
+
+  }
+  }
 </script>
 <style>
 #app{
