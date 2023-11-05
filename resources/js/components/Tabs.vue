@@ -2,21 +2,22 @@
   <div>
     <!-- <div class="container "> -->
       <div class="tabs "  id="tabs">
-          <div class="tabs__nav ">
-              <div :class="{'active' : isActive ('tab-1')}"><button  @click="setActive ('tab-1')" >Для руководителя<br> лаборатории</button></div>
-              <div :class="{'active' : isActive ('tab-2')}"><button  @click="setActive ('tab-2')">Для лаборанта и СМК</button></div>
-              <div :class="{'active' : isActive ('tab-3')}"><button  @click="setActive ('tab-3')">Для менеджера по<br> работе с клиентами</button></div>
-              <div :class="{'active' : isActive ('tab-4')}"><button  @click="setActive ('tab-4')">Для клиента лаборатории</button></div>
+          <div class="tabs__nav " >
+              <div :class="{ 'active': isActive ('tab-1')}" @click="setActive ('tab-1')"><button  @click="showTab1">Для руководителя<br> лаборатории</button></div>
+              <div :class="{ 'active': isActive ('tab-2')}" @click="setActive ('tab-2')"><button  @click="showTab2">Для лаборанта и СМК</button></div>
+              <div :class="{ 'active': isActive ('tab-3')}" @click="setActive ('tab-3')"><button @click="showTab3">Для менеджера по<br> работе с клиентами</button></div>
+              <div :class="{ 'active': isActive ('tab-4')}" @click="setActive ('tab-4')"><button  @click="showTab4">Для клиента лаборатории</button></div>
           </div>
 
-        <div class="container tabs__item ">
+        <div class="container tabs__item " v-if="tab1Visible">
             <div class="tabs__item-column" >
-                <div @click="setActive ('tab-5')" :class="{'activeYellow': isActive ('tab-5')}"><h4 class="tab" >ULAB руководителю</h4></div>
-                <div @click="setActive ('tab-6')" :class="{'activeYellow' : isActive ('tab-6')}"><h4 class="tab" >Отчеты о деятельности лаборатории</h4></div>
-                <div @click="setActive ('tab-7')" :class="{'activeYellow' : isActive ('tab-7')}"><h4 class="tab" >Взаимодействие с данными</h4></div>
+                <div :class="{ 'activeYellow': isActiveItem ('tab-5')}" @click="setActiveItem ('tab-5')"><h4 class="tab" @click="tabsItem1">ULAB руководителю</h4></div>
+                <div :class="{ 'activeYellow': isActiveItem ('tab-6')}" @click="setActiveItem ('tab-6')"><h4 class="tab" @click="tabsItem2">Отчеты о деятельности лаборатории</h4></div>
+                <div :class="{ 'activeYellow': isActiveItem ('tab-7')}" @click="setActiveItem ('tab-7')"><h4 class="tab" @click="tabsItem3">Взаимодействие с данными</h4></div>
             </div>
+
             <div class="tabs__description">
-                <div class="tabs__desc" v-show="isActive('tab-5')">
+                <div class="tabs__desc"  v-if="tabItem1Visible">
                     <div class="tabs__desc-text ">— Контроль сотрудников, деятельность лаборатории</div><br>
                     <div class="tabs__desc-text ">— Автоматизация и повышение производительности</div><br>
                     <div class="tabs__desc-text ">— Снижение человеческого фактора: контроль параметров проведения испытания (температура, влажность в помещении, статус поверки оборудования и прочее)</div><br>
@@ -25,18 +26,86 @@
                     <div class="tabs__desc-text ">— Повышение лояльности клиентов: личный кабинет, реестр выданных документов</div><br>
                     <div class="tabs__desc-text ">— Обеспечение беспристрастностии конфиденциальности испытаний</div><br>
                 </div>
-                <div class="tabs__desc" v-show="isActive('tab-6')">
+                <div class="tabs__desc" v-if="tabItem2Visible">
                     <div class="tabs__desc-text ">— Финансовая и управленческая отчетность </div><br>
                     <div class="tabs__desc-text ">— Отчеты о КПД сотрудников     </div><br>
                     <div class="tabs__desc-text ">— Отчеты о применяемых методиках    </div><br>
                     <div class="tabs__desc-text ">— Отчеты по клиентам: финансы, виды материалов, методики, производители продукции </div><br>
                 </div>
-                <div class="tabs__desc" v-show="isActive('tab-7')">
+                <div class="tabs__desc" v-if="tabItem3Visible">
                     <div class="tabs__desc-text ">— Сведения о заявках на испытания (каналы продаж) </div><br>
                     <div class="tabs__desc-text ">— Реестр документов (ТЗ, счета, договоры, оплаты)</div><br>
                     <div class="tabs__desc-text ">— Сведения об испытаниях (журналы, результаты, документы)   </div><br>
                     <div class="tabs__desc-text ">— Формирование закрывающих документов (интеграция с 1С)</div><br>
                 </div>
+            </div>
+        </div>
+
+        <div class="container tabs__item " v-if="tab2Visible">
+            <div class="tabs__item-column">
+                <div :class="{ 'activeYellow': isActive ('tab-2')}" @click="setActive ('tab-2')"><h4 class="tab" >Для чего U-LAB лаборанту и СМК</h4></div>
+            </div>
+            <div class="tabs__description">
+                <div class="tabs__desc">
+                    <div class="tabs__desc-text ">— Внутрилабораторный контроль, график ВЛК</div><br>
+                    <div class="tabs__desc-text ">— Постановка задач персоналу на ВЛК</div><br>
+                    <div class="tabs__desc-text ">— Расчет неопределенностей</div><br>
+                    <div class="tabs__desc-text ">— Межлабораторные сличительные испытания</div><br>
+                    <div class="tabs__desc-text ">— Составление плана МСИ на расчетный период</div><br>
+                </div>
+                <div class="tabs__desc" >
+                    <div class="tabs__desc-text ">— Повышения качества работы отдела продаж за счет CRM-системы</div><br>
+                    <div class="tabs__desc-text ">— Автоматизация и повышение производительности</div><br>
+                    <div class="tabs__desc-text ">— Планирование деятельности лаборатории: загруженность сотрудников и оборудования, финансовое планирование</div><br>
+                    <div class="tabs__desc-text ">— Повышение лояльности клиентов: личный кабинет, реестр выданных документовМежлабораторные сличительные испытания</div><br>
+                </div>
+                <div class="tabs__desc" >
+                    <div class="tabs__desc-text ">— Личный кабинет на сайте</div><br>
+                    <div class="tabs__desc-text ">— Реестр проведенных испытаний и их результатов</div><br>
+                    <div class="tabs__desc-text ">— Реестр документов: счета, акты, договоры</div><br>
+                    <div class="tabs__desc-text ">— Формирование новых заявок в личном кабинете</div><br>
+                </div>
+            </div>
+        </div>
+
+        <div class="container tabs__item " v-if="tab3Visible">
+            <div class="tabs__item-column" >
+                <div :class="{ 'activeYellow': isActiveItem ('tab-5')}" @click="setActiveItem ('tab-5')"><h4 class="tab" @click="tabs3Item1">Для чего U-LAB менеджеру по работе с клиентами</h4></div>
+                <div :class="{ 'activeYellow': isActiveItem ('tab-9')}" @click="setActiveItem ('tab-9')"><h4 class="tab" @click="tabs3Item2">Отчеты о деятельности лаборатории</h4></div>
+                <div :class="{ 'activeYellow': isActiveItem ('tab-10')}" @click="setActiveItem ('tab-10')"><h4 class="tab" @click="tabs3Item3">Взаимодействие с данными</h4></div>
+            </div>
+
+            <div class="tabs__description">
+                <div class="tabs__desc"  v-if="tab3Item1Visible">
+                    <div class="tabs__desc-text ">— Повышения качества работы отдела продаж за счет CRM-системы</div><br>
+                    <div class="tabs__desc-text ">— Автоматизация и повышение производительности</div><br>
+                    <div class="tabs__desc-text ">— Планирование деятельности лаборатории: загруженность сотрудников и оборудования, финансовое планирование  </div><br>
+                    <div class="tabs__desc-text ">— Повышение лояльности клиентов: личный кабинет, реестр выданных документов </div><br>
+                </div>
+                <div class="tabs__desc" v-if="tab3Item2Visible">
+                    <div class="tabs__desc-text ">— Полноценная CRM-система </div><br>
+                    <div class="tabs__desc-text ">— Финансовая отчетность     </div><br>
+                    <div class="tabs__desc-text ">— Отчеты по клиентам: финансы, виды материалов, методики, производители продукции    </div><br>
+                </div>
+                <div class="tabs__desc" v-if="tab3Item3Visible">
+                    <div class="tabs__desc-text ">— Сведения о сотрудниках, оборудовании и методиках </div><br>
+                    <div class="tabs__desc-text ">— База знаний</div><br>
+                </div>
+            </div>
+        </div>
+
+        <div class="container tabs__item " v-if="tab4Visible">
+            <div class="tabs__item-column">
+                <div :class="{ 'activeYellow': isActive ('tab-4')}" @click="setActive ('tab-4')"><h4 class="tab" >Для чего U-LAB клиенту</h4></div>
+            </div>
+            <div class="tabs__description">
+                <div class="tabs__desc">
+                    <div class="tabs__desc-text ">— Личный кабинет на сайте</div><br>
+                    <div class="tabs__desc-text ">— Реестр проведенных испытаний и их результатов</div><br>
+                    <div class="tabs__desc-text ">— Реестр документов: счета, акты, договоры</div><br>
+                    <div class="tabs__desc-text ">— Формирование новых заявок в личном кабинете</div><br>
+                </div>
+
             </div>
         </div>
 
@@ -50,13 +119,11 @@
 
 
 
-            <!-- <div class="tabs__item-column " v-show="isActive('tab-2')">
-                <div><h4 class="tab" >Для чего U-LAB лаборанту и СМК</h4></div>
-            </div>
+            <!--
 
             <div class="tabs__item-column " v-show="isActive('tab-3')">
-                <div><h4 class="tab" >Для чего U-LAB менеджеру по работе с клиентами</h4></div>
-                <div><h4 class="tab" >Отчеты о деятельности лаборатории</h4></div>
+
+                <div><h4 class="tab" >/h4></div>
                 <div><h4 class="tab" >Взаимодействие с данными</h4></div>
             </div>
 
@@ -68,23 +135,13 @@
 
 
                 <div class="tabs__desc"  >
-                    <div class="tabs__desc-text ">— Внутрилабораторный контроль, график ВЛК</div><br>
-                    <div class="tabs__desc-text ">— Постановка задач персоналу на ВЛК</div><br>
-                    <div class="tabs__desc-text ">— Расчет неопределенностей</div><br>
-                    <div class="tabs__desc-text ">— Межлабораторные сличительные испытания</div><br>
-                    <div class="tabs__desc-text ">— Составление плана МСИ на расчетный период</div><br>
+
                 </div>
                 <div class="tabs__desc" >
-                    <div class="tabs__desc-text ">— Повышения качества работы отдела продаж за счет CRM-системы</div><br>
-                    <div class="tabs__desc-text ">— Автоматизация и повышение производительности</div><br>
-                    <div class="tabs__desc-text ">— Планирование деятельности лаборатории: загруженность сотрудников и оборудования, финансовое планирование</div><br>
-                    <div class="tabs__desc-text ">— Повышение лояльности клиентов: личный кабинет, реестр выданных документовМежлабораторные сличительные испытания</div><br>
+
                 </div>
                 <div class="tabs__desc" v-show="isActive('tab-4')">
-                    <div class="tabs__desc-text ">— Личный кабинет на сайте</div><br>
-                    <div class="tabs__desc-text ">— Реестр проведенных испытаний и их результатов</div><br>
-                    <div class="tabs__desc-text ">— Реестр документов: счета, акты, договоры</div><br>
-                    <div class="tabs__desc-text ">— Формирование новых заявок в личном кабинете</div><br>
+
                 </div> -->
 
 
@@ -104,20 +161,88 @@
 <script>
 export default {
   name: "Tabs",
-  data:()=>({
-        activeTab: 'tab-1',
-    }),
+  data(){
+
+
+        return{
+            tab1Visible:true,
+            tab2Visible:false,
+            tab3Visible:false,
+            tab4Visible:false,
+            tabItem1Visible:true,
+            tabItem2Visible:false,
+            tabItem3Visible:false,
+            tab3Item1Visible:true,
+            tab3Item2Visible:false,
+            tab3Item3Visible:false,
+            activeTab: 'tab-1',
+            activeItem: 'tab-5'
+            // isActive:false
+        }
+    },
     methods: {
+        showTab1(){
+            this.tab1Visible=true,
+            this.tab2Visible=false
+
+        },
+        showTab2(){
+            this.tab1Visible=false,
+            this.tab2Visible=true
+        },
+        showTab3(){
+            this.tab1Visible=false,
+            this.tab2Visible=false,
+            this.tab3Visible=true,
+            this.tab4Visible=false
+        },
+        showTab4(){
+            this.tab1Visible=false,
+            this.tab2Visible=false,
+            this.tab3Visible=false,
+            this.tab4Visible=true
+        },
+        tabsItem1(){
+            this.tabItem1Visible=true
+        },
+        tabsItem2(){
+            this.tabItem1Visible=false,
+            this.tabItem2Visible=true
+
+        },
+        tabs3Item3(){
+            this.tabItem1Visible=false,
+            this.tabItem2Visible=false,
+            this.tabItem3Visible=true
+        },
+        tabs3Item1(){
+            this.tab3Item1Visible=true
+        },
+        tabs3Item2(){
+            this.tab3Item1Visible=false,
+            this.tab3Item2Visible=true
+
+        },
+        tabs3Item3(){
+            this.tab3Item1Visible=false,
+            this.tab3Item2Visible=false,
+            this.tab3Item3Visible=true
+        },
         setActive(tab){
             this.activeTab = tab
+        },
+        setActiveItem(tab){
+            this.activeItem = tab
         },
         isActive(tab){
             return this.activeTab === tab;
         },
+        isActiveItem(tab){
+            return this.activeItem === tab;
+        },
         activeYellow(tab){
             return this.activeTab === tab;
-        }
-
+        },
     },
 
   // data:()=>({
