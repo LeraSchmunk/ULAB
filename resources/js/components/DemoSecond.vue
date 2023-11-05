@@ -42,7 +42,7 @@ export default {
 <style scoped>
 #demo-second{
   /* background-color:  #1B1A1A; */
-  margin-bottom: 506px;
+  margin-bottom: 150px;
   padding-top: 300px;
 
   /* background-image: url('../img/demosecond-background.png');

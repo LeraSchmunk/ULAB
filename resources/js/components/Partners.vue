@@ -1,9 +1,9 @@
 <template>
-  <div id="keys">
-    <div class="container">
-      <div class="keys">
-            <div class="keys-card ">
-                <div class="keys-card-img"><img src="../../../public/img/smt.png " alt=" " ></div>
+  <div >
+    <div class="container" id="partners">
+      <div class="partners">
+            <div class="partners-card ">
+                <div class="partners-card-img"><img src="../../../public/img/smt.png " alt=" " ></div>
                 <p class="keys-title ">ЛИМС в процессе внедрения в ООО «СибМосТест» произвели следующие работы:</p>
                 <li class="card-list "><span>Настроили CRM</span></li>
                 <li class="card-list "><span>Кабинет заказчика</span></li>
@@ -18,9 +18,9 @@
                 <li class="card-list "><span>Проверили печати протоколов всех видов</span></li>
             </div>
 
-            <div class="keys-card ">
-              <div class="keys-card-img"><img src="../../../public/img/stm.png " alt=" " ></div>
-                <p class="keys-title ">ООО «Научно-исследовательский центр "Строительных технологий и материалов"»</p>
+            <div class="partners-card ">
+              <div class="partners-card-img"><img src="../../../public/img/stm.png " alt=" " ></div>
+                <p class="partners-title ">ООО «Научно-исследовательский центр "Строительных технологий и материалов"»</p>
                 <li class="card-list "><span>Настроили права сотрудников в ЛИМС</span></li>
                 <li class="card-list "><span>Настроили интеграцию с 1С</span></li>
                 <li class="card-list "><span>Настроили журнал заявок</span></li>
@@ -35,9 +35,9 @@
                 <li class="card-list "><span>Настроили функционал постановки задач</span></li>
                 <li class="card-list "><span>Обучили сотрудников работе в ЛИМС</span></li>
             </div>
-            <div class="keys-card ">
-              <div class="keys-card-img"><img src="../../../public/img/lador.png " alt=" " ></div>
-                <p class="keys-title ">Проведено внедрение ЛИМС в НИИ ЛАДОР</p>
+            <div class="partners-card ">
+              <div class="partners-card-img"><img src="../../../public/img/lador.png " alt=" " ></div>
+                <p class="partners-title ">Проведено внедрение ЛИМС в НИИ ЛАДОР</p>
                 <li class="card-list "><span>Настроили журнал заявок, карточки заявок и создание заявок</span></li>
                 <li class="card-list "><span>Создали шаблоны документов: коммерческое предложение, договор, счет, акт, протоколы</span></li>
                 <li class="card-list "><span>Настроили систему контроля условий испытаний</span></li>
@@ -56,13 +56,14 @@
 </template>
 <script>
 export default {
-  name: "Keys"
+  name: "Partners"
 }
 </script>
 <style scoped>
-#keys{
+#partners{
   /* background-color:  #1B1A1A; */
   padding-bottom: 200px;
+  padding-top: 100px;
 
   /* background-image: url('../img/about-background.png');
   background-repeat: no-repeat;
@@ -70,19 +71,19 @@ export default {
   background-size: 100%; */
 }
 
-.keys{
+.partners{
   display: flex;
   justify-content: space-between;
   gap: 20px;
 }
 
-.keys-card{
+.partners-card{
   width: 440px;
   border: 1px solid #ffeeb42a;
   padding: 27px ;
 }
 
-.keys-card-img img{
+.partners-card-img img{
   /* height: 153px; */
   width: 400px;
   /* background-color: white; */
@@ -90,7 +91,7 @@ export default {
   margin-bottom: 32px;
 }
 
-.keys-title{
+.partners-title{
   font-size: 20px;
   color:  #FFEEB4;
   font-weight: 600;

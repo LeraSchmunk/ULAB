@@ -4,7 +4,7 @@
       <div class="prices">
         <div>Стоимость лицензии на 12 пользователей составляет от 399 000 рублей,<br> на 50 пользователей - от 799 000 рублей.</div>
         <div class="maintitle">Ценообразование U-LAB формируется при учете следующих факторов</div>
-        <button class="btns baner__btn" @click="showDemo">Узнать цену</button>
+        <button class="btns baner__btn" @click="showPrice">Узнать цену</button>
       </div>
       <div class="icons">
         <div class="icon">
@@ -43,8 +43,8 @@
 export default {
   name: "Prices",
   methods:{
-    showDemo(){
-      this.$emit('showDemo')
+    showPrice(){
+      this.$emit('showPrice')
     }
   }
 }
@@ -66,6 +66,7 @@ export default {
   /* margin-top: 120px;
   margin-bottom: 202px; */
   height: 180px;
+  margin-bottom: 100px;
 }
 .icons{
   display: flex;

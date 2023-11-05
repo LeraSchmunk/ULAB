@@ -12,7 +12,7 @@
       </div>
       <form class="demoModalModules" @submit.prevent="onsubmit">
           <input class="inputDemo" id="name" type="text" placeholder=" Ваше имя" v-model="name">
-          <input class="inputDemo" id="job" type="text" placeholder=" Должность в компании" v-model="job">
+          <input class="inputDemo" id="job" type="text" placeholder=" Компания" v-model="job">
           <input class="inputDemo" id="number" type="number" placeholder="+7 999 999 99 99" v-model="number">
           <input type="text" placeholder=" example@example.ru">
           <button id="btn" @click="getModules" class="send-btn btns">Получить список модулей</button>

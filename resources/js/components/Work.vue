@@ -1,6 +1,6 @@
 <template>
-  <div id="work">
-    <div class="container">
+  <div >
+    <div class="container" id="work">
       <div class="work">
         <img src="../../../public/img/logo.png" alt="">
         <div class="maintitle">Порядок проведения работ по внедрению U-LAB</div>
@@ -48,7 +48,9 @@ export default {
 <style scoped>
 #work{
   /* background-color:  #1B1A1A; */
-  padding-bottom: 240px;
+  margin-bottom: 670px;
+  padding-top: 100px;
+
 
 
   /* background-image: url('../img/about-background.png');

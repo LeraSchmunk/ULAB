@@ -1,6 +1,6 @@
 <template>
-  <div id="base">
-    <div class="container">
+  <div >
+    <div class="container" id="base">
       <div class="base">
             <div class="container ">
               <div class="base__title maintitle">Базовый функционал ULAB</div>
@@ -34,7 +34,8 @@ export default {
 <style scoped>
 #base{
   /* background-color:  #1B1A1A; */
-  margin-bottom: 200px;
+  margin-bottom: 150px;
+  padding-top: 130px;
 
   /* background-image: url('../img/about-background.png');
   background-repeat: no-repeat;

@@ -1,6 +1,6 @@
 <template>
   <div id="demo">
-    <div class="demo container">
+    <div class="demo container" id="demo">
       <div class="demo-description">
           <div class="demo__title maintitle">
           Больше 50 лабораторий внедряют ulab
@@ -72,7 +72,8 @@ export default {
 
 #demo{
   /* background-color: #1B1A1A; */
-  padding: 95px 0 200px 0;
+  /* padding-bottom:80px ; */
+  padding-top: 60px;
   /* height: 500px; */
 }
 

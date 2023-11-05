@@ -1,59 +1,71 @@
 <template>
-  <div id="app">
-    <Header></Header>
-    <Baner @showDemo="showDemoModal"></Baner>
+
+  <!-- <router-view /> -->
+    <Header @showConnection="showConnectionModal"></Header>
+
+
+
+    <About @showDemo="showDemoModal"></About>
     <Demo @showDemo="showDemoModal" @showPossibilities="showPossibilitiesModal" ></Demo>
     <Tabs></Tabs>
     <Base></Base>
     <DemoSecond @showDemo="showDemoModal" @showModules="showModulesModal" ></DemoSecond>
-    <Keys></Keys>
+    <Partners></Partners>
     <Work @showDemo="showDemoModal"></Work>
-    <Differences></Differences>
+    <Unique>Уникальность</Unique>
+
     <!-- <Projects></Projects> -->
-    <Prices @showDemo="showDemoModal"></Prices>
+    <Prices @showPrice="showPriceModal"></Prices>
 
     <!-- <BanerLower></BanerLower> -->
+
     <Footer></Footer>
+
+
+
     <ModalDemo v-if="showDemoVisible" @closeDemo="closeDemoModal"></ModalDemo>
     <ModalPossibilities v-if="showPossibilitiesVisible" @closePossibilities="closePossibilitiesModal"></ModalPossibilities>
     <ModalModules v-if="showModulesVisible" @closeModules="closeModulesModal"></ModalModules>
-  </div>
+    <ModalConnection v-if="showConnectionVisible" @closeConnection="closeConnectionModal"></ModalConnection>
+    <ModalPrice v-if="showPriceVisible" @closePrice="closePriceModal"></ModalPrice>
+
+
 </template>
 <script>
 import Header from "./components/Header.vue";
-import Baner from "./components/Baner.vue";
+import About from "./components/About.vue";
 import Tabs from "./components/Tabs.vue";
 import Base from "./components/Base.vue";
 import DemoSecond from "./components/DemoSecond.vue";
-import Keys from "./components/Keys.vue";
+import Partners from "./components/Partners.vue";
 import Work from "./components/Work.vue";
-import Differences from "./components/Differences.vue";
+import Unique from "./components/Unique.vue";
 import Prices from "./components/Prices.vue";
-
-
-import Slider from "./components/Keys.vue";
-import Projects from "./components/Projects.vue";
 import Demo from "./components/Demo.vue";
-import BanerLower from "./components/BanerLower.vue";
 import Footer from "./components/Footer.vue";
 import ModalDemo from './components/ModalDemo.vue';
 import ModalPossibilities from'./components/ModalPossibilities.vue';
 import ModalModules from'./components/ModalModules.vue';
+import ModalConnection from'./components/ModalConnection.vue';
+import ModalPrice from'./components/ModalPrice.vue';
+
 
 export default {
-    name: "App",
+      name: "App",
     components: {
-      Header, Baner, Tabs, Base, Slider, Projects, Demo, BanerLower, Footer, DemoSecond, Keys, Work, Differences, Prices,
-        ModalDemo, ModalPossibilities, ModalModules
+      Header, About, Tabs, Base, Demo, Footer, DemoSecond, Partners, Work, Unique, Prices, ModalDemo, ModalPossibilities, ModalModules, ModalConnection, ModalPrice
     },
 
     emits: ['click1', 'click2'],
 
     data () {
+
       return{
         showDemoVisible:false,
         showPossibilitiesVisible:false,
         showModulesVisible:false,
+        showConnectionVisible:false,
+        showPriceVisible:false
 
       }
     },
@@ -82,6 +94,19 @@ export default {
     closeModulesModal(){
       this.showModulesVisible=false
     },
+    showConnectionModal(){
+      this.showConnectionVisible=true
+    },
+    closeConnectionModal(){
+      this.showConnectionVisible=false
+    },
+    showPriceModal(){
+      this.showPriceVisible=true
+    },
+    closePriceModal(){
+      this.showPriceVisible=false
+    }
+
 
   }
   }

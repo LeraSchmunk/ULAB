@@ -20,7 +20,7 @@
 
           </button>
           <button class="btns contact-btn">Связаться</button>
-            <button class="btns contact-btn">&#64;  i.boldyreva@niistrom.pro</button>
+            <!-- <button class="btns contact-btn">&#64;  i.boldyreva@niistrom.pro</button> -->
 
 
         </div>
@@ -45,7 +45,7 @@ export default {
 <style scoped>
 #footer {
 
-    /* height: 62px; */
+    /* height: 238px; */
     background-color:  #242323;
     padding-bottom: 32px;
 
@@ -55,8 +55,9 @@ export default {
   color: #00000040;
     display: flex;
     justify-content: space-between;
-    /* align-items: center; */
+    align-items: start;
     padding-top:40px ;
+    padding-bottom: 0;
   }
 
 

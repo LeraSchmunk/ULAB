@@ -1,6 +1,6 @@
 <template>
-  <div id="baner">
-    <div class="baner container">
+  <div >
+    <div class="baner container" >
 
 
 
@@ -13,7 +13,7 @@
         </div>
         <button type="button" class="btns baner__btn" @click="showDemo" >Протестировать</button>
       </div>
-      <div class="about">
+      <div class="about" id="about">
         <div class="about__title maintitle">Что такое ULAB</div>
 
         <div class="about__subtitle mainsubtitle ">
@@ -35,7 +35,7 @@
 <script>
 
 export default {
-  name: "Baner",
+  name: "About",
   data () {
     return{
 
@@ -51,17 +51,23 @@ export default {
 }
 </script>
 <style scoped>
-  #baner{
+  #about{
     /* background-color: #1B1A1A;
     background-image: url('../img/Group17.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100%; */
     /* padding: 300px 0 349px 0; */
-    height: 1290px;
-    margin-bottom: 100px;
+    /* height: 1290px; */
+    margin-bottom: 250px;
+    padding-top: 150px;
 
 
+
+  }
+
+  .baner{
+    padding-top: 150px;
   }
 
 
@@ -90,17 +96,19 @@ export default {
     padding: 13px 15px;
     color: #1B1A1A;
     background-color: white;
-    margin-bottom: 600px;
+    margin-bottom: 450px;
   }
 
   .about{
   color: white!important;
   display: grid;
   grid-template-columns: 1fr 1fr;
+
 }
 
 .about__subtitle{
   width: 555px;
+  line-height: 1.3em;
 }
 
 .about__title{
