@@ -18,6 +18,8 @@
         "vue": "^3.2.36",
         "vue-loader": "^17.3.0",
         "vue-router": "^4.2.5",
+        "vue-yandex-metrika": "^1.8.3",
+        "vue3-yandex-metrika": "^0.0.4",
         "vuelidate": "^0.7.7"
     }
 }
