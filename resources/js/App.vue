@@ -19,7 +19,7 @@
 
     <!-- <BanerLower></BanerLower> -->
 
-    <Footer></Footer>
+    <Footer @showConnection="showConnectionModal"></Footer>
 
 
 

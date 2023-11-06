@@ -108,45 +108,6 @@
 
             </div>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-            <!--
-
-            <div class="tabs__item-column " v-show="isActive('tab-3')">
-
-                <div><h4 class="tab" >/h4></div>
-                <div><h4 class="tab" >Взаимодействие с данными</h4></div>
-            </div>
-
-            <div class="tabs__item-column " v-show="isActive('tab-4')">
-                <div><h4 class="tab" >Для чего U-LAB клиенту</h4></div>
-            </div>
-
-
-
-
-                <div class="tabs__desc"  >
-
-                </div>
-                <div class="tabs__desc" >
-
-                </div>
-                <div class="tabs__desc" v-show="isActive('tab-4')">
-
-                </div> -->
-
-
-
-
         </div>
     </div>
         <div class="tabs__img">
@@ -188,6 +149,7 @@ export default {
         },
         showTab2(){
             this.tab1Visible=false,
+            this.tab3Visible=false,
             this.tab2Visible=true
         },
         showTab3(){
@@ -244,20 +206,6 @@ export default {
             return this.activeTab === tab;
         },
     },
-
-  // data:()=>({
-  //       activeTab: 'tab-1',
-  //   }),
-  //   methods: {
-  //       setActive(tab){
-  //           this.activeTab = tab
-  //       },
-  //       isActive(){
-  //           return this.activeTab === tab;
-  //       },
-
-  //   },
-
 }
 </script>
 <style scoped>
@@ -265,6 +213,7 @@ export default {
   /* background-color:  #1B1A1A; */
   margin-bottom: 200px;
   padding-top: 100px;
+  min-height: 500px;
 }
 .tabs__nav{
   display: flex;

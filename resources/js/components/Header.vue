@@ -96,11 +96,16 @@ methods:{
     justify-content: space-between;
     font-size: 14px;
     font-weight: 400;
+    text-decoration: none;
 }
+
+
 
 .li-btn {
     margin-right: 40px;
     cursor: pointer;
+    text-decoration: none;
+
 }
 
 .navbar__logo{
@@ -123,6 +128,10 @@ methods:{
 .contact-btn {
   padding: 6px 14px;
   border: 0.1px solid white;
+}
+
+router-link{
+  text-decoration: none;
 }
 
 

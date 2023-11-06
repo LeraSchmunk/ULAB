@@ -6,20 +6,24 @@
       </div>
       <div class="navbar__middle">
         <ul class="navbar__list ">
-          <li class="li-btn grey"> О нас</li>
-          <li class="li-btn grey"> Внедрение</li>
-          <li class="li-btn grey"> Для кого</li>
-          <li class="li-btn grey"> Функционал</li>
-          <li class="li-btn grey"> Партнеры</li>
-          <li class="li-btn grey"> Этапы</li>
-          <li class="li-btn grey"> Уникальность</li>
+          <router-link :to="{ name: 'About', hash:'#about'}" class="li-btn">О нас</router-link>
+          <router-link :to="{ name: 'Demo', hash:'#demo'}" class="li-btn">Внедрение</router-link>
+          <router-link :to="{ name: 'Tabs', hash:'#tabs'}" class="li-btn">Для кого</router-link>
+          <router-link :to="{ name: 'Base', hash:'#base'}" class="li-btn">Функционал</router-link>
+          <router-link :to="{ name: 'Partners', hash:'#partners'}" class="li-btn">Партнеры</router-link>
+          <router-link :to="{ name: 'Work', hash:'#work'}" class="li-btn">Этапы</router-link>
+          <router-link :to="{ name: 'Unique', hash:'#unique'}" class="li-btn">Уникальность</router-link>
+
         </ul>
         <div class="navbar__buttons ">
-          <button class="btns wtsapp-btn">
-            <img src="../../../public/img/whatsapp.png" alt="whatsapp">
-
-          </button>
-          <button class="btns contact-btn">Связаться</button>
+          <div class="btns wtsapp">
+            <a :href="whatsapp">
+              <button class="btns wtsapp-btn" >
+                <img src="../../../public/img/whatsapp.png" alt="whatsapp">
+              </button>
+            </a>
+          </div>
+          <button class="btns contact-btn"  @click="showConnection">Связаться</button>
             <!-- <button class="btns contact-btn">&#64;  i.boldyreva@niistrom.pro</button> -->
 
 
@@ -38,7 +42,15 @@
 
 <script>
 export default {
-  name: "Footer"
+  name: "Footer",
+  data(){
+    whatsapp:"https://wa.me/+79966908099"
+  },
+  methods:{
+    showConnection(){
+      this.$emit('showConnection')
+    }
+  }
 }
 </script>
 
@@ -78,6 +90,8 @@ export default {
 
 .li-btn {
     margin-right: 32px;
+    text-decoration: none;
+    cursor: pointer;
 
 }
 
