@@ -2,9 +2,8 @@
 
 
 <div id="app" >
-  <div class="container">
-    <div class="navbar container">
-    <div class="navbar  fixed ">
+<div class="navbar-background">
+    <div class="navbar">
       <div class="navbar__logo">
       <img src="../../../public/img/logo.png" alt="logo">
     </div>
@@ -37,8 +36,10 @@
 
 
   </div>
-  </div>
-  </div>
+
+</div>
+
+
 
   <!-- <router-view /> -->
 
@@ -68,15 +69,22 @@ methods:{
   background-color: rgba(0, 0, 0, 0.419);
 }
 .fixed{
-  position: fixed;
-    z-index: 998;
-    width: 1360px;
+
     /* padding-top: 150px; */
 
     /* top: 0; */
 }
-.navbar {
+.navbar-background{
+  /* background-color: black; */
+  /* height: 90px; */
 
+
+
+}
+.navbar {
+  position: fixed;
+    /* z-index: 998; */
+    width: 100%;
     /* background-color: #1B1A1A; */
     padding-bottom: 10px;
     padding-top: 150px;
@@ -86,9 +94,11 @@ methods:{
 .navbar{
   color: white;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     padding-top: 40px;
+
+    background-color: rgba(0, 0, 0, 0.622);
 
 }
 .navbar__list {

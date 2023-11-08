@@ -211,9 +211,9 @@ export default {
 <style scoped>
 #tabs{
   /* background-color:  #1B1A1A; */
-  margin-bottom: 200px;
+  /* margin-bottom: 200px; */
   padding-top: 100px;
-  min-height: 500px;
+  min-height: 300px;
 }
 .tabs__nav{
   display: flex;
@@ -249,7 +249,7 @@ export default {
     /* justify-content: space-between; */
     gap: 290px;
     margin-top: 110px;
-    margin-bottom: 110px;
+    /* margin-bottom: 110px; */
 }
 
 .tabs__item-column{

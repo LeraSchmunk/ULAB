@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\MailController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Email related routes
+// Route::get('/mail/send', [\App\Http\Controllers\MailController::class,
+// 'send']);
+
+Route::post('/connection', [\App\Http\Controllers\MailController::class,
+'send']);
+
+
+
+
 Route::get('/', function () {
     return view('test');
 });
+
+// Route::post('/connection', [\App\Http\Controllers\Connection::class,
+//     'createRequest', function(Request $request){}]);

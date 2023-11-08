@@ -60,6 +60,16 @@ export default {
     },
     connection(){
 
+      axios.post('/api/connection' , {
+        "name": this.name,
+        "company": this.company,
+        "email": this.email,
+        "number": this.number
+      }).then(res=>{
+        console.log(res)
+      }).catch(e=>{
+        console.log(e)
+      })
       // if (this.$v.$invalid){
       //   this.$v.$touch()
       //   return
