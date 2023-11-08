@@ -15,7 +15,7 @@
           <input class="inputDemo" id="company" type="text" placeholder="  * Компания" v-model.trim="company">
           <input class="inputDemo" id="number" type="tel" placeholder="  * +7 999 999 99 99" v-model.trim="number">
           <input type="email" placeholder="   * example@example.ru" id="email" v-model.trim="email">
-          <button type="submit" id="btn" @click="sendApplication" class="send-btn btns">Связаться</button>
+          <button type="submit" id="btn" @click="sendContacts" class="send-btn btns">Связаться</button>
       </form>
     </div>
   </div>
@@ -58,28 +58,34 @@ export default {
     closeConnection(){
       this.$emit('closeConnection')
     },
+
+    sendContacts() {
+        let dataResponse = {
+            name: this.name,
+            company: this.company,
+            email: this.email,
+            number: this.number
+        }
+
+        axios.post('/connection' , dataResponse)
+          .then((responce)=>{
+            console.log(responce.data)
+            this.close()
+          }).catch(e=>{
+            console.log(e)
+          })
+        },
+
+
     connection(){
 
-      axios.post('/api/connection' , {
-        "name": this.name,
-        "company": this.company,
-        "email": this.email,
-        "number": this.number
-      }).then(res=>{
-        console.log(res)
-      }).catch(e=>{
-        console.log(e)
-      })
-      // if (this.$v.$invalid){
-      //   this.$v.$touch()
-      //   return
-      // }
       this.v$.$validate()
       if(!this.v$.$error){
 
       } else {
         alert('Пожалуйста, заполните все поля')
-      }
+      };
+
 
     }
   }

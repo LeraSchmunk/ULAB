@@ -19,8 +19,8 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/mail/send', [\App\Http\Controllers\MailController::class,
 // 'send']);
 
-Route::get('/connection', [\App\Http\Controllers\MailController::class,
-'send']);
+Route::post('/connection', [\App\Http\Controllers\MailController::class,
+'send', function(Request $request){}]);
 
 
 

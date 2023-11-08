@@ -26,6 +26,6 @@ class MailController extends Controller
 
         ];
 
-        Mail::to("lerashmunk1995@yandex.ru")->send(new ContactMail($details));
+        Mail::to("obukhov081189@gmail.com")->send(new ContactMail($details));
     }
 }
