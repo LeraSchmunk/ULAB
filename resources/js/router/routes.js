@@ -52,5 +52,4 @@ export default [
             import ("@/components/Unique.vue")
     }
 
-
 ]

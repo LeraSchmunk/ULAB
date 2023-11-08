@@ -1,8 +1,9 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+
 use App\Http\Controllers\Controller;
-use App\Mail\DemoEmail;
+use App\Mail\ContactMail;
 use Illuminate\Support\Facades\Mail;
 class MailController extends Controller
 {
