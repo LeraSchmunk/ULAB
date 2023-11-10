@@ -15,7 +15,7 @@
               <input class="inputDemo" id="company" type="text" placeholder="  * Компания" v-model.trim="company">
               <input class="inputDemo" id="number" type="tel" placeholder="  * +7 999 999 99 99" v-model.trim="number">
               <input type="email" placeholder="   * example@example.ru" id="email" v-model.trim="email">
-              <button type="submit" id="btn" @click="sendContacts" class="send-btn btns">Отправить запрос на демонстрацию</button>
+              <button type="submit" id="btn" @click="sendDemo" class="send-btn btns">Отправить запрос на демонстрацию</button>
           </form>
         </div>
       </div>
@@ -29,6 +29,7 @@ import {required,email, numeric} from '@vuelidate/validators'
 
 export default {
   name: "ModalDemo",
+
   data(){
     return{
       v$: useVuelidate(),
@@ -50,8 +51,11 @@ export default {
     closeDemo(){
       this.$emit('closeDemo')
     },
+    sendDemo(){
+      this.$emit('sendDemo')
+    },
 
-    sendContacts() {
+    sendDemo() {
         let dataResponse = {
             name: this.name,
             company: this.company,

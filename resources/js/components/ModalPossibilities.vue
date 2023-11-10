@@ -15,7 +15,7 @@
               <input class="inputDemo" id="company" type="text" placeholder="  * Компания" v-model.trim="company">
               <input class="inputDemo" id="number" type="tel" placeholder="  * +7 999 999 99 99" v-model.trim="number">
               <input type="email" placeholder="   * example@example.ru" id="email" v-model.trim="email">
-              <button id="btn" @click="sendContacts" class="send-btn btns">Получить список возможностей</button>
+              <button type="submit" id="btn" @click="sendPossibilities" class="send-btn btns">Получить список возможностей</button>
           </form>
         </div>
       </div>
@@ -51,7 +51,10 @@ export default {
     closePossibilities(){
       this.$emit('closePossibilities')
     },
-    sendContacts() {
+    sendPossibilities(){
+      this.$emit('sendPossibilities')
+    },
+    sendPossibilities() {
         let dataResponse = {
             name: this.name,
             company: this.company,

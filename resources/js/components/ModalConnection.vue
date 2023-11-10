@@ -58,6 +58,9 @@ export default {
     closeConnection(){
       this.$emit('closeConnection')
     },
+    sendContacts(){
+      this.$emit('sendContacts')
+    },
 
     sendContacts() {
         let dataResponse = {

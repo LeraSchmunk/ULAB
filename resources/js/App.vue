@@ -2,9 +2,6 @@
 
   <!-- <router-view /> -->
     <Header @showConnection="showConnectionModal"></Header>
-
-
-
     <About @showDemo="showDemoModal"></About>
     <Demo @showDemo="showDemoModal" @showPossibilities="showPossibilitiesModal" ></Demo>
     <Tabs></Tabs>
@@ -13,21 +10,15 @@
     <Partners></Partners>
     <Work @showDemo="showDemoModal"></Work>
     <Unique>Уникальность</Unique>
-
     <!-- <Projects></Projects> -->
     <Prices @showPrice="showPriceModal"></Prices>
-
     <!-- <BanerLower></BanerLower> -->
-
     <Footer @showConnection="showConnectionModal"></Footer>
-
-
-
-    <ModalDemo v-if="showDemoVisible" @closeDemo="closeDemoModal"></ModalDemo>
-    <ModalPossibilities v-if="showPossibilitiesVisible" @closePossibilities="closePossibilitiesModal"></ModalPossibilities>
-    <ModalModules v-if="showModulesVisible" @closeModules="closeModulesModal"></ModalModules>
-    <ModalConnection v-if="showConnectionVisible" @closeConnection="closeConnectionModal"></ModalConnection>
-    <ModalPrice v-if="showPriceVisible" @closePrice="closePriceModal"></ModalPrice>
+    <ModalDemo @sendDemo="sendDemoClose" v-if="showDemoVisible" @closeDemo="closeDemoModal"></ModalDemo>
+    <ModalPossibilities @sendPossibilities="sendPossibilitiesClose" v-if="showPossibilitiesVisible" @closePossibilities="closePossibilitiesModal"></ModalPossibilities>
+    <ModalModules @sendModules="sendModulesClose" v-if="showModulesVisible" @closeModules="closeModulesModal"></ModalModules>
+    <ModalConnection  v-if="showConnectionVisible" @closeConnection="closeConnectionModal" @sendContacts="sendContactsClose"></ModalConnection>
+    <ModalPrice v-if="showPriceVisible" @closePrice="closePriceModal"  @sendPrice="sendPriceClose"></ModalPrice>
 
 
 </template>
@@ -56,7 +47,7 @@ export default {
       Header, About, Tabs, Base, Demo, Footer, DemoSecond, Partners, Work, Unique, Prices, ModalDemo, ModalPossibilities, ModalModules, ModalConnection, ModalPrice
     },
 
-    emits: ['click1', 'click2'],
+    emits: ['click1', 'click2', 'click3', 'click4', 'click5', 'click6' ],
 
     data () {
 
@@ -66,7 +57,6 @@ export default {
         showModulesVisible:false,
         showConnectionVisible:false,
         showPriceVisible:false
-
       }
     },
   methods: {
@@ -105,9 +95,23 @@ export default {
     },
     closePriceModal(){
       this.showPriceVisible=false
+    },
+    sendContactsClose(){
+      this.showConnectionVisible=false
+      console.log('закрыть')
+    },
+    sendDemoClose(){
+      this.showDemoVisible=false
+    },
+    sendModulesClose(){
+      this.showModulesVisible=false
+    },
+    sendPossibilitiesClose(){
+      this.showPossibilitiesVisible=false
+    },
+    sendPriceClose(){
+      this.showPriceVisible=false
     }
-
-
   }
   }
 </script>

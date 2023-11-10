@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use App\Mail\ContactMail;
 
 use App\Http\Controllers\Controller;
 
@@ -18,17 +19,13 @@ class MailController extends Controller
     // }
     public function send(Request $request)
     {
+        $details = [
+            'email'=> $request->email,
+            'name' => $request->name,
+            'company' => $request->company,
+            'number' => $request->number,
+        ];
 
-        Mail::raw('Привет', function($message)
-        {
-            $message->from(env('MAIL_USERNAME', ''), 'Vasya Pupkin');
-            $message->to('obukhov081189@gmail.com');
-        });
-//	 $to = "obukhov081189@gmail.com";
-//         $subject = "Заявка на демо-доступ от {$request->name}";
-//         $message = "Имя: " . $request->name . "<br/> Должность: " . $request->company . "<br/> Телефон: " . $request->phone;
-//         $is_sent = mail($to, $subject, $message);
-//
-//        echo json_encode($is_sent);
+        Mail::to('limsyst@yandex.ru')->locale('ru')->send(new ContactMail($details));
     }
 }

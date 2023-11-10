@@ -2,7 +2,7 @@
   <div id="footer">
     <div class="navbar container">
       <div class="navbar__logo btnBlue">
-        <img src="../../../public/img/logo.png" alt="">
+        <router-link :to="{ name: 'Home', hash:'#home'}" class="li-btn"><img src="../../../public/img/logo.png" alt="logo"></router-link>
       </div>
       <div class="navbar__middle">
         <ul class="navbar__list ">
@@ -43,9 +43,10 @@
 <script>
 export default {
   name: "Footer",
-  data(){
+  data:()=>({
+
     whatsapp:"https://wa.me/+79966908099"
-  },
+  }),
   methods:{
     showConnection(){
       this.$emit('showConnection')
