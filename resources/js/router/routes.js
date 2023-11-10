@@ -50,6 +50,12 @@ export default [
         name: 'Unique',
         component: () =>
             import ("@/components/Unique.vue")
-    }
+    },
+    {
+        path: '/',
+        name: 'Home',
+        component: () =>
+            import ("@/components/Header.vue")
+    },
 
 ]

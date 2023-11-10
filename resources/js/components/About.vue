@@ -1,21 +1,17 @@
 <template>
   <div >
     <div class="baner container" >
-
-
-
       <div class="baner-text">
         <div class="baner__title">
           Автоматизируйте лабораторию легко!
         </div>
         <div class="baner__subtitle">
-          Первая лабораторная система, полностью интегрированная с ФГИС росаккредитации
+          Первая лабораторная система, полностью интегрированная с ФГИС Росаккредитации
         </div>
         <button type="button" class="btns baner__btn" @click="showDemo" >Протестировать</button>
       </div>
       <div class="about" id="about">
         <div class="about__title maintitle">Что такое ULAB</div>
-
         <div class="about__subtitle mainsubtitle ">
           U-LAB — система автоматизации деятельности испытательной лаборатории, призванная минимизировать время выполнения всех бизнес-процессов, при соблюдении высоких стандартов качества.
           <br> <br>
@@ -27,21 +23,16 @@
         </div>
       </div>
     </div>
-    <!-- <div class="background">
-        <img src="../../../public/img/about-background.png" alt="">
-      </div> -->
   </div>
 </template>
-<script>
 
+<script>
 export default {
   name: "About",
   data () {
     return{
 
     }
-
-
   },
   methods:{
     showDemo(){
@@ -52,18 +43,8 @@ export default {
 </script>
 <style scoped>
   #about{
-    /* background-color: #1B1A1A;
-    background-image: url('../img/Group17.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100%; */
-    /* padding: 300px 0 349px 0; */
-    /* height: 1290px; */
     margin-bottom: 250px;
     padding-top: 150px;
-
-
-
   }
 
   .baner{
@@ -73,13 +54,11 @@ export default {
 
   .baner-text{
     text-align: center;
-    /* background-color: #1b1a1a00; */
   }
   .baner__title {
     font-weight: 800;
     font-size: 72px;
     text-transform: uppercase;
-    /* background-color: #1b1a1a00; */
   }
   .baner__subtitle {
     font-size: 24px;
@@ -103,7 +82,6 @@ export default {
   color: white!important;
   display: grid;
   grid-template-columns: 1fr 1fr;
-
 }
 
 .about__subtitle{
@@ -113,9 +91,6 @@ export default {
 
 .about__title{
   color:#FFEEB4;
-
-
-
 }
 
 .baner__btn{

@@ -67,10 +67,12 @@ export default {
             number: this.number
         }
 
+      console.log(dataResponse);
+
         axios.post('/connection' , dataResponse)
-          .then((responce)=>{
-            console.log(responce.data)
-            this.close()
+          .then((response)=>{
+            console.log(response.data)
+            // this.close()
           }).catch(e=>{
             console.log(e)
           })

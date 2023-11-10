@@ -33,27 +33,14 @@ export default {
 </script>
 <style scoped>
 #base{
-  /* background-color:  #1B1A1A; */
   margin-bottom: 150px;
   padding-top: 130px;
-
-  /* background-image: url('../img/about-background.png');
-  background-repeat: no-repeat;
-  background-position:top center;
-  background-size: 100%; */
 }
 
 .base{
   color: white!important;
   display: grid;
   grid-template-columns: 1fr 1fr;
-
-  /* gap: 76px 65px;
-  grid-template-areas:
-    "percent work__title work__title"
-    "work-step01 work-step02 work-step03";
-  padding: 36px 0 60px 0; */
-
 }
 .base__title{
   color:#FFEEB4;
@@ -75,4 +62,5 @@ export default {
 .step-active{
   background: linear-gradient(45deg, rgb(127, 58, 232), rgb(232, 84, 217) 75%);
 }
+
 </style>

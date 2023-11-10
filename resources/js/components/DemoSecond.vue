@@ -41,23 +41,15 @@ export default {
 </script>
 <style scoped>
 #demo-second{
-  /* background-color:  #1B1A1A; */
   margin-bottom: 150px;
   padding-top: 300px;
-
-  /* background-image: url('../img/demosecond-background.png');
-  background-repeat: no-repeat;
-  background-position:top center;
-  background-size: 100%; */
 }
 
 .demo-second{
   display: grid;
-    grid-template-columns: 1fr 1fr;
-    /* justify-content: space-between; */
-    gap: 101px;
-    align-items: center;
-
+  grid-template-columns: 1fr 1fr;
+  gap: 101px;
+  align-items: center;
 }
 
 .demo-second img{
@@ -75,7 +67,6 @@ export default {
 
 .demo__subtitle{
   padding-top: 40px;
-
 }
 
 .btns {
@@ -95,13 +86,6 @@ export default {
   color: white!important;
   display: grid;
   grid-template-columns: 1fr 1fr;
-
-  /* gap: 76px 65px;
-  grid-template-areas:
-    "percent work__title work__title"
-    "work-step01 work-step02 work-step03";
-  padding: 36px 0 60px 0; */
-
 }
 
 .base__ladder{

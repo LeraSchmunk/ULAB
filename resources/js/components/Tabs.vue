@@ -1,45 +1,44 @@
 <template>
-  <div>
-    <!-- <div class="container "> -->
-      <div class="tabs "  id="tabs">
-          <div class="tabs__nav " >
-              <div :class="{ 'active': isActive ('tab-1')}" @click="setActive ('tab-1')"><button  @click="showTab1">Для руководителя<br> лаборатории</button></div>
-              <div :class="{ 'active': isActive ('tab-2')}" @click="setActive ('tab-2')"><button  @click="showTab2">Для лаборанта и СМК</button></div>
-              <div :class="{ 'active': isActive ('tab-3')}" @click="setActive ('tab-3')"><button @click="showTab3">Для менеджера по<br> работе с клиентами</button></div>
-              <div :class="{ 'active': isActive ('tab-4')}" @click="setActive ('tab-4')"><button  @click="showTab4">Для клиента лаборатории</button></div>
-          </div>
-
-        <div class="container tabs__item " v-if="tab1Visible">
-            <div class="tabs__item-column" >
-                <div :class="{ 'activeYellow': isActiveItem ('tab-5')}" @click="setActiveItem ('tab-5')"><h4 class="tab" @click="tabsItem1">ULAB руководителю</h4></div>
-                <div :class="{ 'activeYellow': isActiveItem ('tab-6')}" @click="setActiveItem ('tab-6')"><h4 class="tab" @click="tabsItem2">Отчеты о деятельности лаборатории</h4></div>
-                <div :class="{ 'activeYellow': isActiveItem ('tab-7')}" @click="setActiveItem ('tab-7')"><h4 class="tab" @click="tabsItem3">Взаимодействие с данными</h4></div>
+    <div>
+        <div class="tabs "  id="tabs">
+            <div class="tabs__nav " >
+                <div :class="{ 'active': isActive ('tab-1')}" @click="setActive ('tab-1')"><button  @click="showTab1">Для руководителя<br> лаборатории</button></div>
+                <div :class="{ 'active': isActive ('tab-2')}" @click="setActive ('tab-2')"><button  @click="showTab2">Для лаборанта и СМК</button></div>
+                <div :class="{ 'active': isActive ('tab-3')}" @click="setActive ('tab-3')"><button @click="showTab3">Для менеджера по<br> работе с клиентами</button></div>
+                <div :class="{ 'active': isActive ('tab-4')}" @click="setActive ('tab-4')"><button  @click="showTab4">Для клиента лаборатории</button></div>
             </div>
 
-            <div class="tabs__description">
-                <div class="tabs__desc"  v-if="tabItem1Visible">
-                    <div class="tabs__desc-text ">— Контроль сотрудников, деятельность лаборатории</div><br>
-                    <div class="tabs__desc-text ">— Автоматизация и повышение производительности</div><br>
-                    <div class="tabs__desc-text ">— Снижение человеческого фактора: контроль параметров проведения испытания (температура, влажность в помещении, статус поверки оборудования и прочее)</div><br>
-                    <div class="tabs__desc-text ">— Взаимодействие с государственными органами (Росаккредитация)и другими лабораториями (МСИ)</div><br>
-                    <div class="tabs__desc-text ">— Планирование деятельности лаборатории: загруженность сотрудников и оборудования, финансовое планирование</div><br>
-                    <div class="tabs__desc-text ">— Повышение лояльности клиентов: личный кабинет, реестр выданных документов</div><br>
-                    <div class="tabs__desc-text ">— Обеспечение беспристрастностии конфиденциальности испытаний</div><br>
+            <div class="container tabs__item " v-if="tab1Visible">
+                <div class="tabs__item-column" >
+                    <div :class="{ 'activeYellow': isActiveItem ('tab-5')}" @click="setActiveItem ('tab-5')"><h4 class="tab" @click="tabsItem1">ULAB руководителю</h4></div>
+                    <div :class="{ 'activeYellow': isActiveItem ('tab-6')}" @click="setActiveItem ('tab-6')"><h4 class="tab" @click="tabsItem2">Отчеты о деятельности лаборатории</h4></div>
+                    <div :class="{ 'activeYellow': isActiveItem ('tab-7')}" @click="setActiveItem ('tab-7')"><h4 class="tab" @click="tabsItem3">Взаимодействие с данными</h4></div>
                 </div>
-                <div class="tabs__desc" v-if="tabItem2Visible">
-                    <div class="tabs__desc-text ">— Финансовая и управленческая отчетность </div><br>
-                    <div class="tabs__desc-text ">— Отчеты о КПД сотрудников     </div><br>
-                    <div class="tabs__desc-text ">— Отчеты о применяемых методиках    </div><br>
-                    <div class="tabs__desc-text ">— Отчеты по клиентам: финансы, виды материалов, методики, производители продукции </div><br>
-                </div>
-                <div class="tabs__desc" v-if="tabItem3Visible">
-                    <div class="tabs__desc-text ">— Сведения о заявках на испытания (каналы продаж) </div><br>
-                    <div class="tabs__desc-text ">— Реестр документов (ТЗ, счета, договоры, оплаты)</div><br>
-                    <div class="tabs__desc-text ">— Сведения об испытаниях (журналы, результаты, документы)   </div><br>
-                    <div class="tabs__desc-text ">— Формирование закрывающих документов (интеграция с 1С)</div><br>
+
+                <div class="tabs__description">
+                    <div class="tabs__desc"  v-if="tabItem1Visible">
+                        <div class="tabs__desc-text ">— Контроль сотрудников, деятельность лаборатории</div><br>
+                        <div class="tabs__desc-text ">— Автоматизация и повышение производительности</div><br>
+                        <div class="tabs__desc-text ">— Снижение человеческого фактора: контроль параметров проведения испытания (температура, влажность в помещении, статус поверки оборудования и прочее)</div><br>
+                        <div class="tabs__desc-text ">— Взаимодействие с государственными органами (Росаккредитация)и другими лабораториями (МСИ)</div><br>
+                        <div class="tabs__desc-text ">— Планирование деятельности лаборатории: загруженность сотрудников и оборудования, финансовое планирование</div><br>
+                        <div class="tabs__desc-text ">— Повышение лояльности клиентов: личный кабинет, реестр выданных документов</div><br>
+                        <div class="tabs__desc-text ">— Обеспечение беспристрастностии конфиденциальности испытаний</div><br>
+                    </div>
+                    <div class="tabs__desc" v-if="tabItem2Visible">
+                        <div class="tabs__desc-text ">— Финансовая и управленческая отчетность </div><br>
+                        <div class="tabs__desc-text ">— Отчеты о КПД сотрудников     </div><br>
+                        <div class="tabs__desc-text ">— Отчеты о применяемых методиках    </div><br>
+                        <div class="tabs__desc-text ">— Отчеты по клиентам: финансы, виды материалов, методики, производители продукции </div><br>
+                    </div>
+                    <div class="tabs__desc" v-if="tabItem3Visible">
+                        <div class="tabs__desc-text ">— Сведения о заявках на испытания (каналы продаж) </div><br>
+                        <div class="tabs__desc-text ">— Реестр документов (ТЗ, счета, договоры, оплаты)</div><br>
+                        <div class="tabs__desc-text ">— Сведения об испытаниях (журналы, результаты, документы)   </div><br>
+                        <div class="tabs__desc-text ">— Формирование закрывающих документов (интеграция с 1С)</div><br>
+                    </div>
                 </div>
             </div>
-        </div>
 
         <div class="container tabs__item " v-if="tab2Visible">
             <div class="tabs__item-column">
@@ -105,19 +104,11 @@
                     <div class="tabs__desc-text ">— Реестр документов: счета, акты, договоры</div><br>
                     <div class="tabs__desc-text ">— Формирование новых заявок в личном кабинете</div><br>
                 </div>
-
             </div>
         </div>
-        </div>
     </div>
-        <div class="tabs__img">
-            <!-- <img src="../../../public/img/tabs-img.png" alt=""> -->
-        </div>
-
-
-
-
-
+</div>
+<div class="tabs__img"></div>
 </template>
 <script>
 export default {
@@ -150,7 +141,8 @@ export default {
         showTab2(){
             this.tab1Visible=false,
             this.tab3Visible=false,
-            this.tab2Visible=true
+            this.tab2Visible=true,
+            this.tab4Visible=false
         },
         showTab3(){
             this.tab1Visible=false,
@@ -213,7 +205,7 @@ export default {
   /* background-color:  #1B1A1A; */
   /* margin-bottom: 200px; */
   padding-top: 100px;
-  min-height: 300px;
+  height: 800px;
 }
 .tabs__nav{
   display: flex;

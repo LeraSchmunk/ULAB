@@ -56,30 +56,25 @@ export default {
 
 <style scoped>
 #footer {
-
-    /* height: 238px; */
-    background-color:  #242323;
-    padding-bottom: 32px;
+  background-color:  #242323;
+  padding-bottom: 32px;
 
 }
 
 .navbar{
   color: #00000040;
-    display: flex;
-    justify-content: space-between;
-    align-items: start;
-    padding-top:40px ;
-    padding-bottom: 0;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  padding-top:40px ;
+  padding-bottom: 0;
+}
 
 
 .navbar__list {
-    display: flex;
-    justify-content: space-between;
-    font-size: 14px;
-
-
-
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
 }
 .navbar__middle{
   display: flex;
@@ -89,10 +84,9 @@ export default {
 }
 
 .li-btn {
-    margin-right: 32px;
-    text-decoration: none;
-    cursor: pointer;
-
+  margin-right: 32px;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .grey{
@@ -103,7 +97,6 @@ export default {
 
 .navbar__buttons{
   display: flex;
-  /* justify-content: space-between; */
   align-items: center;
   gap: 8px;
   padding: 45px 0;

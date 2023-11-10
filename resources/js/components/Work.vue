@@ -47,21 +47,11 @@ export default {
 </script>
 <style scoped>
 #work{
-  /* background-color:  #1B1A1A; */
   margin-bottom: 670px;
   padding-top: 100px;
-
-
-
-  /* background-image: url('../img/about-background.png');
-  background-repeat: no-repeat;
-  background-position:top center;
-  background-size: 100%; */
 }
 
 .work{
-
-  /* margin: 0 auto; */
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -101,7 +91,6 @@ export default {
 .work01{
   position: absolute;
   left: 171px;
-  /* top: 20px; */
 }
 .work03{
   position: absolute;

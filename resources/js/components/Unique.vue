@@ -2,14 +2,11 @@
   <div>
     <div class="container" id="unique">
       <div class="unique">
-
         <div class="unique__title" >
           <div class="maintitle">Чем мы отличаемся от других LIMS</div>
           <img src="../../../public/img/differences-logo.png" alt="">
         </div>
-
         <div class="unique__column" >
-
           <div class="column1">
             <li>Полная интеграция с ФГИС ФСА по API</li><br>
             <li>Интеграция с 1С и 1С-Битрикс24</li><br>
@@ -26,12 +23,8 @@
             <li>Система на постоянной основе проходит аудит действующих экспертов Росаккредитации</li><br>
           </div>
         </div>
-
-
-
-
+      </div>
     </div>
-  </div>
   </div>
 </template>
 
@@ -42,41 +35,17 @@ export default {
 </script>
 <style scoped>
 #unique{
-  /* background-color:  #1B1A1A; */
   padding-bottom: 200px;
   padding-top: 100px;
-
-
-
-  /* background-image: url('../img/about-background.png');
-  background-repeat: no-repeat;
-  background-position:top center;
-  background-size: 100%; */
 }
 
-.unique{
-  /* display: grid;
-    grid-template-columns: 1fr 1fr; */
-    /* justify-content: space-between; */
-    /* gap: 101px; */
-    /* align-items: center; */
 
-}
 .unique__title{
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-bottom: 100px;
-
-  /* position: absolute; */
-
 }
-
-/* .differences img{
-  width: 100px;
-  height: 70px;
-} */
-
 .unique__column{
   display: flex;
   justify-content: space-between;

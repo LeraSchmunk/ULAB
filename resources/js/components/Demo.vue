@@ -13,31 +13,24 @@
           </div>
         </div>
       </div>
-
-
-
       <div class="demo__options">
         <div class="demo-block">
           <img class="demo-int" src="img/demo-int.png" alt="">
-          <!-- <div class="stars"></div> -->
           <div class="demo-block__title">Интеграции</div>
           <div class="demo-block__description mainsubtitle">С более чем 1000 приложений, среди которых 1с и Битрикс 24</div>
         </div>
         <div class="demo-block">
           <img class="demo-int" src="img/demo-gos.png" alt="">
-          <!-- <div class="stars"></div> -->
           <div class="demo-block__title">Госорганы</div>
           <div class="demo-block__description mainsubtitle">Взаимодействие с государственными органами</div>
         </div>
         <div class="demo-block">
           <img class="demo-mob" src="img/demo-mobile.png" alt="">
-          <!-- <div class="stars"></div> -->
           <div class="demo-block__title">Мобильное приложение</div>
           <div class="demo-block__description mainsubtitle">Комфортно используй продукт в любом месте и в любое время</div>
         </div>
         <div class="demo-block">
           <img  class="demo-mob" src="img/demo-other.png" alt="">
-          <!-- <div class="stars"></div> -->
           <div class="demo-block__title">Дополнительно</div>
           <div class="demo-block__description mainsubtitle">
             +50 дополнительных модулей<br><br>
@@ -48,9 +41,8 @@
           </div>
         </div>
       </div>
-      </div>
-      </div>
-
+    </div>
+  </div>
 </template>
 
 <script>
@@ -71,21 +63,13 @@ export default {
 <style scoped>
 
 #demo{
-  /* background-color: #1B1A1A; */
-  /* padding-bottom:80px ; */
   padding-top: 60px;
-  /* height: 500px; */
 }
 
 .demo{
-
   display: flex;
   justify-content: space-between;
   gap: 136px;
-
-
-
-
 }
 
 .maintitle{
@@ -161,13 +145,10 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  /* width: 380px; */
-  /* padding-top: 36px; */
 }
 
 .titleMonserrat {
   color: white;
-  /* font-weight: 800; */
   font-size: 40px;
   width: 430px;
   margin-right: 270px;
@@ -183,7 +164,6 @@ export default {
   color: white;
   font-size: 32px;
   width: 440px;
-
 }
 .titleMonserrat--small{
   color: white;
@@ -208,12 +188,10 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
 
 .advantage-block img{
   height: 64px;
-  /* width: 64px; */
 }
 
 .time{
@@ -237,6 +215,4 @@ export default {
   background-size: 95%;
   background-color: rgba(255, 255, 255, 0.1);
 }
-
-
 </style>

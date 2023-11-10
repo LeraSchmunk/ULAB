@@ -35,7 +35,6 @@
         </div>
       </div>
     </div>
-
   </div>
 </template>
 
@@ -51,20 +50,12 @@ export default {
 </script>
 <style scoped>
 #prices{
-  /* background-color:  #1B1A1A; */
   padding-bottom: 200px;
   padding-top: 300px;
-
-  /* background-image: url('../img/about-background.png');
-  background-repeat: no-repeat;
-  background-position:top center;
-  background-size: 100%; */
 }
 
 .icon{
   text-align: center;
-  /* margin-top: 120px;
-  margin-bottom: 202px; */
   height: 180px;
   margin-bottom: 100px;
 }
@@ -79,19 +70,15 @@ export default {
   width: 84px;
   height: 84px;
   align-content: center;
-  /* margin-bottom: 40px; */
 }
 .icon img{
   height: 100px;
-width: 100px;}
+  width: 100px;}
 .icon-text{
   font-size: 28px;
-
 }
 
 .prices{
-
-  /* margin: 0 auto; */
   text-align: center;
   display: flex;
   flex-direction: column;
