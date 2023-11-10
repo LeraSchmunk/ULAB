@@ -86,6 +86,21 @@ export default {
 </script>
 <style scoped>
 
+.modal {
+    padding: 20px;
+    width: 500px;
+    margin: 0 auto;
+    background-image: url('../../../public/img/modal-background.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 150%;
+    position: fixed;
+    top: 20%;
+    left: 30%;
+    color: black;
+    border: 3px solid white;
+    text-align: left;
+}
 
 
 .maintitle{

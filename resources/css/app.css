@@ -88,7 +88,6 @@ li {
 .modal {
     padding: 20px;
     width: 500px;
-    /* height: 500px; */
     margin: 0 auto;
     background-image: url('../../../public/img/modal-background.png');
     background-repeat: no-repeat;
