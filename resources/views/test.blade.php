@@ -9,7 +9,6 @@
 </head>
 <body>
   <div id="app">
-    <span>Hdhgdljhsl</span>
   </div>
   @vite('resources/js/app.js')
 </body>

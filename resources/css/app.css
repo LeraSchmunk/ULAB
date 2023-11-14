@@ -1,10 +1,10 @@
 /*-------------------------- Общие стили -----------------------*/
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
-@import url('../../public/fonts/rfdewi/stylesheet.css');
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap");
+@import url("../../public/fonts/rfdewi/stylesheet.css");
 * {
     margin: 0;
     font-family: RFDewi, sans-serif;
@@ -14,7 +14,7 @@
 
 .container {
     margin: 0 auto;
-    width: 1360px;
+    max-width: 90%;
 }
 
 li {
@@ -64,13 +64,13 @@ li {
 
 .overlay {
     position: fixed;
-    content: ' ';
+    content: " ";
     width: 100%;
     height: 100%;
     z-index: 1;
     top: 0;
     left: 0;
-    background: rgba(0, 0, 0, .7);
+    background: rgba(0, 0, 0, 0.7);
 }
 
 .modal__header {
@@ -89,7 +89,7 @@ li {
     padding: 20px;
     width: 500px;
     margin: 0 auto;
-    background-image: url('../../../public/img/modal-background.png');
+    background-image: url("../../../public/img/modal-background.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 150%;
@@ -121,4 +121,19 @@ li {
 
 .close-btn {
     cursor: pointer;
+}
+
+@media (max-width: 1100px) {
+    .maintitle {
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .maintitle {
+        font-size: 40px;
+    }
+    .mainsubtitle {
+        font-size: 16px;
+    }
 }

@@ -1,61 +1,55 @@
 // import Baner from "../components/Baner.vue";
 // import Differences from "../components/Differences.vue";
 
-
-
-export default [
-
-    {
-        path: '/',
-        name: 'About',
+export default [{
+        path: "/",
+        name: "About",
         component: () =>
-            import ("@/components/About.vue")
+            import ("@/components/About.vue"),
     },
 
     {
-        path: '/',
-        name: 'Demo',
+        path: "/",
+        name: "Demo",
         component: () =>
-            import ("@/components/Demo.vue")
+            import ("@/components/Demo.vue"),
     },
     {
-        path: '/',
-        name: 'Tabs',
+        path: "/",
+        name: "Tabs",
         component: () =>
-            import ("@/components/Tabs.vue")
+            import ("@/components/Tabs.vue"),
     },
     {
-        path: '/',
-        name: 'Base',
+        path: "/",
+        name: "Base",
         component: () =>
-            import ("@/components/Base.vue")
+            import ("@/components/Base.vue"),
     },
     {
-        path: '/',
-        name: 'Partners',
+        path: "/",
+        name: "Partners",
         component: () =>
-            import ("@/components/Partners.vue")
+            import ("@/components/Partners.vue"),
     },
 
     {
-        path: '/',
-        name: 'Work',
+        path: "/",
+        name: "Work",
         component: () =>
-            import ("@/components/Work.vue")
+            import ("@/components/Work.vue"),
     },
-
 
     {
-        path: '/',
-        name: 'Unique',
+        path: "/",
+        name: "Unique",
         component: () =>
-            import ("@/components/Unique.vue")
+            import ("@/components/Unique.vue"),
     },
     {
-        path: '/',
-        name: 'Home',
+        path: "/",
+        name: "Home",
         component: () =>
-            import ("@/components/Header.vue")
+            import ("@/components/Header.vue"),
     },
-
-]
+];
