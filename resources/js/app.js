@@ -12,7 +12,7 @@ import VueAxios from 'vue-axios'
 createApp(App)
     .use(router)
     .use(VueYandexMetrika, {
-        id: 94711045,
+        id: 95774156,
         router: router,
         env: process.env.NODE_ENV
     })

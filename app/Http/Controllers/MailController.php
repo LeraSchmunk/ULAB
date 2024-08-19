@@ -26,6 +26,6 @@ class MailController extends Controller
             'number' => $request->number,
         ];
 
-        Mail::to('limsyst@yandex.ru')->locale('ru')->send(new ContactMail($details));
+        Mail::to('i.boldyreva@niistrom.pro')->locale('ru')->send(new ContactMail($details));
     }
 }

@@ -33,7 +33,7 @@ class DemoEmail extends Mailable
 */
     public function build()
     {
-        return $this->from('lerashmunk.ls@gmail.com')
+        return $this->from('i.boldyreva@niistrom.pro')
                     ->view('demo')
                     ->text('demo_plain')
                     ->with(

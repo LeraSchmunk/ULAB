@@ -1,8 +1,7 @@
 <?php
 
-use App\Http\Controllers\MailController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LogsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,19 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Email related routes
-// Route::get('/mail/send', [\App\Http\Controllers\MailController::class,
-// 'send']);
-
-Route::post('/connection', [\App\Http\Controllers\MailController::class,
-'send', function(Request $request){}]);
-
-
-
-
 Route::get('/', function () {
     return view('test');
 });
 
-// Route::post('/connection', [\App\Http\Controllers\Connection::class,
-//     'createRequest', function(Request $request){}]);
+Route::post('/connection', [\App\Http\Controllers\MailController::class,
+'send', function(Request $request){}]);
+
+Route::get('/getLog', [LogsController::class, 'getIP']);
+Route::get('/getFileIp', [LogsController::class, 'vision_ip']);
