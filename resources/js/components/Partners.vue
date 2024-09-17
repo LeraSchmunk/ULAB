@@ -1,8 +1,17 @@
 <template>
  
     <div>
-        <div id="partners">
+        <div id="partners" class="container">
             <div class="base__title maintitle">Наши проекты</div>
+            <div class="partner_block">
+                Внедрение ЛИМС ULAB — это сложный процесс цифровой трансформации компании с целью принятия лучших практик <br>
+                и подходов для упрощения рабочих процессов, автоматизации, снижения влияния человеческого
+                фактора<br> и общего повышения эффективности работы лаборатории. 
+                <br>
+                <br>
+                <br>
+                Уже более 15 лабораторий по всей России успешно внедрили ЛИМС ULAB.
+            </div>
             <div id="partnersWrapper">
                 <img src="../../../public/img/niistroms.png " alt=" " />
                 <img src="../../../public/img/lador.png " alt=" " />
@@ -37,6 +46,10 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.partner_block{
+    font-size: 20px;
 }
 
 .partners-card {

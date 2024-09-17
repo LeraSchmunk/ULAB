@@ -766,3 +766,24 @@
     font-style: italic;
 }
 
+@font-face {
+	font-family: 'ruberoid_ultra_light';
+	src: url('Ruberoid-UltraLight.woff2') format('WOFF2'),
+		url('Ruberoid-UltraLight.woff') format('WOFF'),
+		url('Ruberoid-UltraLight.eot') format('EOT'),
+		url('Ruberoid-UltraLight.svg') format('SVG');
+	font-weight: normal;
+	unicode-range: U+000-5FF;
+	font-style: normal;
+}
+
+@font-face {
+    font-family: 'Ruberoid';
+    src: local('Ruberoid Bold'), local('Ruberoid-Bold'),
+        url('Ruberoid-Bold.woff2') format('woff2'),
+        url('Ruberoid-Bold.woff') format('woff'),
+        url('Ruberoid-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+  }
+

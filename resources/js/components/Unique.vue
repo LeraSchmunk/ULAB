@@ -2,8 +2,8 @@
     <div id="unique">
         <div class="unique container">
             <div class="unique__title">
-                <div class="maintitle">Чем мы отличаемся от других LIMS</div>
-                <img src="../../../public/img/differences-logo.png" alt="" />
+                <div class="maintitle">Чем мы<br /><br />  отличаемся<br /><br /> от других LIMS</div>
+                <img src="../../../public/img/unique.png" alt="" />
             </div>
             <div class="unique__column">
                 <div class="column1">
@@ -39,6 +39,12 @@
                     </li>
                     <br />
                 </div>
+            </div>
+            <div class="unique_text">
+                ЛИМС ULAB - это не только инновационный программный продукт, это отточенная годами практики <br>
+                 экспертная методология по ведению ключевых процессов лаборатории,  <br> 
+                 что было доказано по всей взаимосвязанной системе в<br>
+                 ГК НИИСТРОМ: Научный центр - IT-Компания - Лаборатория - Производство.
             </div>
         </div>
     </div>
@@ -83,10 +89,16 @@ export default {
     width: 470px;
 }
 
-.column2 {
+.unique_text{
+    margin-top: 100px;
+    text-align: center;
+    font-size: 20px;
+}
+
+/* .column2 {
     position: relative;
     top: 65px;
-}
+} */
 .maintitle {
     color: #f9b4ff;
     /* font-size: 48px; */

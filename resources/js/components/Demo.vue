@@ -17,17 +17,21 @@
                     </div>
                 </div>
             </div>
-            <div class="demo__options">
+        </div>
+        <div class="demo__options container">
                 <div class="demo-block">
                     <img class="demo-int" src="img/demo-int.png" alt="" />
                     <div class="demo-block__title">Интеграции</div>
                     <div class="demo-block__description mainsubtitle">
-                        С более чем 1000 приложений, среди которых 1с и Битрикс
+                        С более чем 1000 приложений, среди которых 1С и Битрикс
                         24
                     </div>
                 </div>
                 <div class="demo-block">
-                    <img class="demo-int" src="img/demo-gos.png" alt="" />
+                    <div>
+                        <img class="demo-int" src="img/demo-gos.png" alt="" />
+                    </div>
+                    
                     <div class="demo-block__title">Госорганы</div>
                     <div class="demo-block__description mainsubtitle">
                         Взаимодействие с государственными органами
@@ -46,7 +50,6 @@
                     <div class="demo-block__title">Дополнительно</div>
                     <div class="demo-block__description mainsubtitle">
                         +50 дополнительных модулей<br /><br />
-                        24 часа от обращения до начала пработы<br /><br />
                         Личный кабинет заказчика<br /><br />
                         Облачная версия системы<br /><br />
                         Встроенная CRM-Система
@@ -54,7 +57,24 @@
                 </div>
             </div>
         </div>
-    </div>
+        <div class="advantages_container">
+            <div class="advantages container">
+                <p>
+                   <span style="color: #f9b4ff; font-size: 24px;">В результате внедрения лаборатория получает 4 ключевых преимущества:</span>
+                </p>
+                <p><span style="color: #ffeeb4;">Существенное снижение затрат</span> рабочего времени на выполнение операционных задач;</p>
+                <p>
+                    <span style="color: #ffeeb4;">Значительное сокращение ошибок</span> ввиду автоматизации и снижения влияния человеческого фактора;
+                </p>
+                <p>
+                    <span style="color: #ffeeb4;">Автоматизация работы с ФСА</span>, загрузка и отправка протоколов в 2 клика;
+                </p>
+                <p>
+                    <span style="color: #ffeeb4;">Инструменты контроля бизнеса для руководителя:</span> как загружены сотрудники и оборудование, каковы финансовые показатели.
+                </p>
+                <p class="big_adv_p" style="font-size: 24px;">В чём практическая польза для всех взаимодействующих с системой?</p>
+            </div>
+        </div>
 </template>
 
 <script>
@@ -101,10 +121,11 @@ export default {
 }
 
 .demo-block {
+    width: 250px;
     border: 1px solid #ffeeb424;
     height: 326px;
     padding: 25px;
-    position: relative;
+    /* position: relative; */
     /* width: 300px; */
 }
 .demo-block__title {
@@ -118,6 +139,26 @@ export default {
 .demo-int {
     position: relative;
     left: -20px;
+    top: 10px;
+}
+
+.advantages_container{
+    height: 300px;
+    background-image: url(/build/assets/demo-bg-bb32f35c.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 200% 100%;
+}
+
+.advantages{
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.advantages p {
+    font-size: 20px;
 }
 
 .demo-mob {
@@ -143,6 +184,12 @@ export default {
 
 .save-btn img {
     padding-right: 15px;
+}
+
+.big_adv_p{
+    padding-top: 30px;
+    font-size: 24px;
+    color: #f9b4ff;
 }
 
 .download {
@@ -290,9 +337,8 @@ export default {
         margin-top: 150px;
     }
     .demo__options {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
+        display: flex;
+        justify-content: space-between;
     }
     .icons {
         display: flex;

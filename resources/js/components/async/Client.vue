@@ -3,13 +3,13 @@
         <div class="tabs__item container">
             <div class="tabs__item-column">
                 <div>
-                    <h4 class="tab">Для чего ULAB клиенту</h4>
+                    <img style="width: 450px; height: 600px;" src="../../../../public/img/clients.png" alt="logo"/>
                 </div>
             </div>
             <div class="tabs__description">
                 <Desc v-for="clients in clients" :key="clients">
                     <div class="tabs__desc">
-                        <li>— {{ clients.li }}</li>
+                        <li class="li_supervisor">— <span class="span_supervisor">{{ clients.span }}</span>{{ clients.li }}</li>
                         <br />
                     </div>
                 </Desc>
@@ -18,16 +18,28 @@
     </div>
 </template>
 
+<!-- — Личный кабинет на сайте с реестром документов и испытаний;
+— Формирование новых заявок в личном кабинете;
+— Электронный документооборот: счета, акты, договоры -->
+
+
 <script>
 export default {
     name: "Client",
     data() {
         return {
             clients: [
-                { li: "Личный кабинет на сайте" },
-                { li: "Реестр проведенных испытаний и их результатов" },
-                { li: "Реестр документов: счета, акты, договоры" },
-                { li: "Формирование новых заявок в личном кабинете" },
+                { 
+                    span: "Личный кабинет",
+                    li: " на сайте с реестром документов и испытаний;"
+                },
+                { 
+                    span: "Формирование",
+                    li: " новых заявок в личном кабинете;" 
+                },
+                { 
+                    span: "Электронный документооборот:", 
+                    li: " счета, акты, договоры" },
             ],
         };
     },
@@ -54,5 +66,13 @@ export default {
 .tabs__item {
     display: grid;
     grid-template-columns: 1fr 1fr;
+}
+
+.li_supervisor{
+    font-size: 20px;
+}
+
+.span_supervisor{
+    color: #f9b4ff;
 }
 </style>

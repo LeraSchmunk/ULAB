@@ -2,7 +2,6 @@
     <div>
         <div id="work">
             <div class="work container">
-                <img src="../../../public/img/logo.png" alt="" />
                 <div class="maintitle">
                     Порядок проведения работ по внедрению ULAB
                 </div>

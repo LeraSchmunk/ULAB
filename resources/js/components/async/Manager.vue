@@ -6,30 +6,14 @@
                     @click="setActive('tab-1')"
                     :class="{ active: isActive('tab-1') }"
                 >
-                    <h4 @click="tabsItem1">
-                        ДЛЯ ЧЕГО ULAB МЕНЕДЖЕРУ ПО РАБОТЕ С КЛИЕНТАМИ
-                    </h4>
-                </div>
-                <div
-                    @click="setActive('tab-2')"
-                    :class="{ active: isActive('tab-2') }"
-                >
-                    <h4 @click="tabsItem2">
-                        ОТЧЕТЫ О ДЕЯТЕЛЬНОСТИ ЛАБОРАТОРИИ
-                    </h4>
-                </div>
-                <div
-                    @click="setActive('tab-3')"
-                    :class="{ active: isActive('tab-3') }"
-                >
-                    <h4 @click="tabsItem3">ВЗАИМОДЕЙСТВИЕ С ДАННЫМИ</h4>
+                <img style="width: 450px; height: 600px;" src="../../../../public/img/client.png" alt="logo"/>
                 </div>
             </div>
 
             <div class="tabs__description">
                 <Desc v-for="manager in manager" :key="manager">
                     <div class="tabs__desc" v-if="descVisible1">
-                        <li>— {{ manager.li }}</li>
+                        <li class="li_supervisor">—<span class="span_supervisor">{{ manager.span}}</span> {{ manager.li }}</li>
                         <br />
                     </div>
                 </Desc>
@@ -63,14 +47,16 @@ export default {
             activeTab: "tab-1",
             manager: [
                 {
-                    li: "Повышения качества работы отдела продаж за счет CRM-системы",
+                    span: "Повышение",
+                    li: " качества работы отдела продаж за счет CRM-системы",
                 },
-                { li: "Автоматизация и повышение производительности" },
-                {
-                    li: "Планирование деятельности лаборатории: загруженность сотрудников и оборудования, финансовое планирование",
+                { 
+                    span: "Автоматизация",
+                    li: " и повышение производительности" 
                 },
                 {
-                    li: "Повышение лояльности клиентов: личный кабинет, реестр выданных документов",
+                    span: "Увеличение",
+                    li: " лояльности клиентов: личный кабинет, реестр выданных документов.",
                 },
             ],
             lab: [
@@ -135,5 +121,13 @@ export default {
 .tabs__item {
     display: grid;
     grid-template-columns: 1fr 1fr;
+}
+
+.li_supervisor{
+    font-size: 20px;
+}
+
+.span_supervisor{
+    color: #f9b4ff;
 }
 </style>

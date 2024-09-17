@@ -1,37 +1,21 @@
 <template>
     <div id="base">
         <div class="base container">
-            <div class="base__title maintitle">Базовый функционал ULAB</div>
+            <div class="base__description">
+                <div class="base_description_title">
+                    <div class="base__title maintitle">
+                        Функционал ULAB
+                    </div>
+                    <div class="base_title_text">
+                        <p class="base_text">Заказчик выбирает конфигурацию и платит только за необходимые функции.</p>
+                        <p class="base_text">ЛИМС ULAB – очень гибкая система, способная решить любые вопросы, связанные с управлением процессами в лаборатории. </p>
+                        <p class="base_text">За автоматизацию отдельных процессов или групп взаимосвязанных процессов отвечают отдельные модули:</p>
+                    </div>
+                </div>
+                <img style="width: 750px;" src="../../../public/img/lim_labs.png" alt="" />
+            </div>
             <div class="base__ladder">
-                <div class="step step-active">
-                    Управление <br />взаимоотношениями с <br />клиентами
-                </div>
-                <div class="base__ladder-second">
-                    <div class="step">Нормативная <br />документация</div>
-                    <div class="step">Учет оборудования</div>
-                </div>
-                <div class="base__ladder-third">
-                    <div class="step">
-                        Контроль условий <br />проведения испытаний
-                    </div>
-                    <div class="step">
-                        Формирование <br />
-                        документации
-                    </div>
-                </div>
-                <div class="base__ladder-forth">
-                    <div class="step">
-                        Интеграция с <br />внешними системами
-                    </div>
-                    <div class="step">
-                        Формирование <br />
-                        отчетности
-                    </div>
-                    <div class="step">
-                        Личный кабинет <br />
-                        заказчика
-                    </div>
-                </div>
+                <img style="width: 100%;" src="../../../public/img/schema.png" alt="" />
             </div>
         </div>
     </div>
@@ -78,6 +62,24 @@ export default {
         rgb(232, 84, 217) 75%
     );
 }
+
+.base__description{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.base_title_text{
+    height: 435px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.base_text{
+    font-size: 20px;
+}
+
 @media (max-width: 900px) {
     .baner__title {
         font-size: 40px;
@@ -95,7 +97,7 @@ export default {
         font-size: 30px;
     }
     .base__ladder {
-        margin-top: 50px;
+        margin-top: 20px;
     }
     .partners-title {
         height: px;
@@ -178,7 +180,7 @@ export default {
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
-        margin-top: 150px;
+        margin-top: 80px;
     }
     .demo__options {
         display: grid;

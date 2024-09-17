@@ -23,7 +23,7 @@
                             class="inputDemo"
                             id="name"
                             type="text"
-                            placeholder="  * Ваше имя"
+                            placeholder="  * Ваше имя (обязательно к заполнению)"
                             v-model.trim="name"
                         />
                         <input
@@ -35,18 +35,33 @@
                         />
                         <input
                             class="inputDemo"
+                            id="position"
+                            type="text"
+                            placeholder="  * Ваша должность"
+                            v-model.trim="position"
+                        />
+                        <input
+                            class="inputDemo"
+                            id="city"
+                            type="text"
+                            placeholder="  * Ваш город"
+                            v-model.trim="city"
+                        />
+                        <input
+                            class="inputDemo"
                             id="number"
                             type="tel"
-                            placeholder="  * +7 999 999 99 99"
+                            placeholder="  * +7 999 999 99 99 (обязательно к заполнению)"
                             v-model.trim="number"
                         />
                         <input
                             type="email"
-                            placeholder="   * example@example.ru"
+                            placeholder="   * email"
                             id="email"
                             v-model.trim="email"
                         />
-                        <button
+                        <p class="privacy_policy">Отправляя свои данные, Вы соглашаетесь <br><a @click="downloadPrivacy" href="#">с политикой конфиденциальности</a></p>
+                        <button :disabled = "!changed || !chekName"
                             type="submit"
                             id="btn"
                             @click="sendPossibilities"
@@ -74,6 +89,8 @@ export default {
             company: "",
             number: "",
             email: "",
+            position: "",
+            city: ""
         };
     },
     validations() {
@@ -82,7 +99,20 @@ export default {
             company: { required },
             number: { required, numeric },
             email: { required, email },
+            position: { required, position },
+            city: { required, city }
         };
+    },
+
+    computed: {
+
+        changed() {
+            return this.number.trim() !='';
+        },
+
+        chekName() {
+            return this.name.trim() !='';
+        }
     },
     methods: {
         closePossibilities() {
@@ -97,6 +127,8 @@ export default {
                 company: this.company,
                 email: this.email,
                 number: this.number,
+                position: this.position,
+                city: this.city
             };
 
             console.log(dataResponse);
@@ -113,6 +145,19 @@ export default {
             alert("Заявка успешно отправлена, наш менеджер свяжется с Вами");
             this.$emit("closePossibilities");
         },
+        downloadPrivacy() {
+
+            axios.get("/privacy_policy", {responseType: 'blob'}).then((response) => {
+
+                const url = window.URL.createObjectURL(new Blob([response.data]));
+                const link = document.createElement('a');
+                link.href = url;
+                link.setAttribute('download', 'Политика конфиденциальности.pdf'); // Имя файла для скачивания
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }) 
+        },
 
         possibilities() {
             this.v$.$validate();
@@ -126,7 +171,7 @@ export default {
 </script>
 <style scoped>
 .modal {
-    padding: 20px;
+    padding: 40px;
     width: 500px;
     margin: 0 auto;
     background-image: url("../../../public/img/modal-background.webp");
@@ -153,6 +198,16 @@ input {
 .demoModalPossibilities {
     display: flex;
     flex-direction: column;
+}
+
+.privacy_policy {
+    padding: 5px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.send-btn:disabled {
+  opacity: 0.5;
 }
 @media (max-width: 950px) {
     .modal {

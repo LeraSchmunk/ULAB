@@ -9,6 +9,8 @@
   <h1>Заявка на демо-версию ULAB</h1>
   <p>Имя: {{$details ['name']}}</p>
   <p>Организация: {{$details ['company']}}</p>
+  <p>Должность: {{$details ['position']}}</p>
+  <p>Город: {{$details ['city']}}</p>
   <p>Телефон: {{$details ['number']}}</p>
   <p>Email: {{$details ['email']}}</p>
 </body>

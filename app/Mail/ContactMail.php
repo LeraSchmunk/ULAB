@@ -31,8 +31,8 @@ class ContactMail extends Mailable
     public function build()
     {
         return $this->from('i.boldyreva@niistrom.pro')
+            ->to('m.levin@niistrom.pro')
         ->view('contact');
-
     }
 
 }

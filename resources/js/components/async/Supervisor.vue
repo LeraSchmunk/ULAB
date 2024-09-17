@@ -4,42 +4,27 @@
             <div class="tabs__item-column">
                 <div
                     @click="setActive('tab-1')"
-                    :class="{ active: isActive('tab-1') }"
-                >
-                    <h4 @click="tabsItem1">ULAB руководителю</h4>
-                </div>
-                <div
-                    @click="setActive('tab-2')"
-                    :class="{ active: isActive('tab-2') }"
-                >
-                    <h4 @click="tabsItem2">
-                        Отчеты о деятельности лаборатории
-                    </h4>
-                </div>
-                <div
-                    @click="setActive('tab-3')"
-                    :class="{ active: isActive('tab-3') }"
-                >
-                    <h4 @click="tabsItem3">Взаимодействие с данными</h4>
+                    :class="{ active: isActive('tab-1') }">
+                    <img style="width: 450px; height: 600px;" src="../../../../public/img/supervisors.png" alt="logo"/>
                 </div>
             </div>
 
             <div class="tabs__description">
                 <Desc v-for="supervisor in supervisor" :key="supervisor">
                     <div class="tabs__desc" v-if="descVisible1">
-                        <li>— {{ supervisor.li }}</li>
+                        <li class="li_supervisor">— <span class="span_supervisor">{{ supervisor.span}}</span>{{ supervisor.li }}</li>
                         <br />
                     </div>
                 </Desc>
                 <Desc v-for="lab in lab" :key="lab">
                     <div class="tabs__desc" v-if="descVisible2">
-                        <li>— {{ lab.li }}</li>
+                        <li class="li_supervisor">— {{ lab.li }}</li>
                         <br />
                     </div>
                 </Desc>
                 <Desc v-for="datas in datas" :key="datas">
                     <div class="tabs__desc" v-if="descVisible3">
-                        <li>— {{ datas.li }}</li>
+                        <li class="li_supervisor">— {{ datas.li }}</li>
                         <br/>
                     </div>
                 </Desc>
@@ -47,6 +32,10 @@
         </div>
     </div>
 </template>
+
+<!-- — Снижение влияния человеческого фактора: контроль параметров проведения испытания на 99%;
+— Взаимодействие с государственными органами (Росаккредитация) быстрее в три раза;
+— Планирование деятельности лаборатории: загруженность сотрудников и оборудования, финансовое планирование. -->
 
 <script>
 import Description from "../Description.vue";
@@ -60,23 +49,16 @@ export default {
             descVisible3: false,
             activeTab: "tab-1",
             supervisor: [
-                { li: "Контроль сотрудников, деятельность лаборатории" },
-                { li: "Автоматизация и повышение производительности" },
+                { 
+                    span:"Снижение",
+                    li: " влияния человеческого фактора: контроль параметров проведения испытания на 99%;" },
+                { 
+                    span: "Взаимодействие",
+                    li: " с государственными органами (Росаккредитация) быстрее в три раза;" },
                 {
-                    li: "Снижение человеческого фактора: контроль параметров проведения испытания (температура, влажность в помещении, статус поверки оборудования и прочее)",
-                },
-                {
-                    li: "Взаимодействие с государственными органами (Росаккредитация)и другими лабораториями (МСИ)",
-                },
-                {
-                    li: "Планирование деятельности лаборатории: загруженность сотрудников и оборудования, финансовое планирование",
-                },
-                {
-                    li: "Повышение лояльности клиентов: личный кабинет, реестр выданных документов",
-                },
-                {
-                    li: "Обеспечение беспристрастностии конфиденциальности испытаний",
-                },
+                    span: "Планирование",
+                    li: " деятельности лаборатории: загруженность сотрудников и оборудования, финансовое планирование",
+                }
             ],
             lab: [
                 { li: "Финансовая и управленческая отчетность" },
@@ -127,7 +109,7 @@ export default {
 
 <style scoped>
 .tabs {
-    padding: 110px 0;
+    padding: 50px 0;
 }
 .tabs__item-column {
     text-transform: uppercase;
@@ -145,5 +127,13 @@ export default {
 .tabs__item {
     display: grid;
     grid-template-columns: 1fr 1fr;
+}
+
+.li_supervisor{
+    font-size: 20px;
+}
+
+.span_supervisor{
+    color: #f9b4ff;
 }
 </style>

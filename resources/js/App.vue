@@ -18,7 +18,7 @@
 
     <!-- <BanerLower></BanerLower> -->
 
-    <Footer></Footer>
+    <Footer @showConnection="showConnectionModal"></Footer>
 
 
     <ModalDemo v-if="showDemoVisible" @closeDemo="closeDemoModal"></ModalDemo>
@@ -81,7 +81,6 @@ export default {
             showModulesVisible: false,
             showConnectionVisible: false,
             showPriceVisible: false
-
         }
     },
     methods: {

@@ -3,7 +3,7 @@
         <div class="overlay">
             <div class="modal">
                 <div class="modal__header">
-                    <h3 class="maintitle">Форма обратной связи</h3>
+                    <h3 class="maintitle">Будем рады провести консультацию <br> по цифровизации Вашей лаборатории!</h3>
                     <div class="close-btn" @click="closeConnection">
                         &#10005;
                     </div>
@@ -18,8 +18,15 @@
                             class="inputDemo"
                             id="name"
                             type="text"
-                            placeholder="  * Ваше имя"
+                            placeholder="  * Ваше имя (обязательно к заполнению)"
                             v-model.trim="name"
+                        />
+                        <input
+                            class="inputDemo"
+                            id="position"
+                            type="text"
+                            placeholder="  * Ваша должность"
+                            v-model.trim="position"
                         />
                         <input
                             class="inputDemo"
@@ -30,24 +37,32 @@
                         />
                         <input
                             class="inputDemo"
+                            id="city"
+                            type="text"
+                            placeholder="  * Ваш город"
+                            v-model.trim="city"
+                        />
+                        <input
+                            class="inputDemo"
                             id="number"
                             type="tel"
-                            placeholder="  * +7 999 999 99 99"
+                            placeholder="  * +7 999 999 99 99 (обязательно к заполнению)"
                             v-model.trim="number"
                         />
                         <input
                             type="email"
-                            placeholder="   * example@example.ru"
+                            placeholder="   * email"
                             id="email"
                             v-model.trim="email"
                         />
-                        <button
+                        <p class="privacy_policy">Отправляя свои данные, Вы соглашаетесь <br><a @click="downloadPrivacy" href="#">с политикой конфиденциальности</a></p>
+                        <button :disabled = "!changed || !chekName"
                             type="submit"
                             id="btn"
                             @click="sendContacts"
                             class="send-btn btns"
                         >
-                            Связаться
+                            Отправить заявку на консультацию
                         </button>
                     </form>
                 </div>
@@ -69,6 +84,9 @@ export default {
             company: "",
             number: "",
             email: "",
+            position: "",
+            city: "",
+            disable: true
         };
     },
 
@@ -78,8 +96,22 @@ export default {
             company: { required },
             number: { required, numeric },
             email: { required, email },
+            position: { required, position },
+            city: { required, city }
         };
     },
+
+    computed: {
+
+        changed() {
+            return this.number.trim() !='';
+        },
+
+        chekName() {
+            return this.name.trim() !='';
+        }
+    },
+
     methods: {
         closeConnection() {
             this.$emit("closeConnection");
@@ -94,6 +126,8 @@ export default {
                 company: this.company,
                 email: this.email,
                 number: this.number,
+                position: this.position,
+                city: this.city
             };
 
             console.log(dataResponse);
@@ -103,12 +137,27 @@ export default {
                 .then((response) => {
                     console.log(response.data);
                     // this.close()
+
                 })
                 .catch((e) => {
                     console.log(e);
                 });
             alert("Заявка успешно отправлена, наш менеджер свяжется с Вами");
             this.$emit("closeConnection");
+        },
+
+        downloadPrivacy() {
+
+            axios.get("/privacy_policy", {responseType: 'blob'}).then((response) => {
+
+                const url = window.URL.createObjectURL(new Blob([response.data]));
+                const link = document.createElement('a');
+                link.href = url;
+                link.setAttribute('download', 'Политика конфиденциальности.pdf'); // Имя файла для скачивания
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }) 
         },
 
         connection() {
@@ -135,13 +184,13 @@ export default {
     border: 3px solid white;
     text-align: left;
     left: 50%;
-    top: 50%;
+    top: 60%;
     display: block;
     transform: translate(-50%, -50%);
 }
 
 .maintitle {
-    font-size: 30px;
+    font-size: 20px;
     width: 500px;
 }
 
@@ -154,9 +203,19 @@ input {
     color: black;
 }
 
+.privacy_policy {
+    padding: 5px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.send-btn:disabled {
+  opacity: 0.5;
+}
+
 @media (max-width: 950px) {
     .modal {
-        top: 60%;
+        top: 80%;
     }
 }
 

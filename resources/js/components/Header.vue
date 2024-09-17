@@ -2,29 +2,23 @@
     <div id="app">
         <div class="navbar-background" id="home">
             <div class="navbar">
-                <div class="navbar__logo">
                     <router-link
                         :to="{ name: 'Home', hash: '#home' }"
-                        class="li-btn"
-                        ><img src="../../../public/img/logo.png" alt="logo"
+                        ><img src="../../../public/img/ULAB_logo_white.png" alt="logo"
                     /></router-link>
-                </div>
-                <ul class="navbar__list">
+        
+                <div class="navbar__list">
                     <router-link
                         :to="{ name: 'About', hash: '#about' }"
                         class="li-btn"
                         >О нас</router-link
                     >
                     <router-link
-                        :to="{ name: 'Demo', hash: '#demo' }"
-                        class="li-btn"
-                        >Внедрение</router-link
-                    >
-                    <router-link
                         :to="{ name: 'Tabs', hash: '#tabs' }"
                         class="li-btn"
                         >Для кого</router-link
                     >
+                    
                     <router-link
                         :to="{ name: 'Base', hash: '#base' }"
                         class="li-btn base"
@@ -36,6 +30,11 @@
                         >Партнеры</router-link
                     >
                     <router-link
+                        :to="{ name: 'Demo', hash: '#demo' }"
+                        class="li-btn"
+                        >Внедрение</router-link
+                    >
+                    <router-link
                         :to="{ name: 'Work', hash: '#work' }"
                         class="li-btn work"
                         >Этапы</router-link
@@ -45,11 +44,11 @@
                         class="li-btn"
                         >Уникальность</router-link
                     >
-                </ul>
+                </div>
                 <div class="navbar__buttons">
                     <div class="group_phone">
-                        <p>+7(996)-690-80-99</p>
-                        <p>+7(800)-333-25-29</p>
+                        <p class="contact_as_tel">8-800-333-25-29</p>
+                        <p class="contact_as">sales@niistrom.pro</p>
                     </div>
                     <div class="btns wtsapp">
                         <a :href="whatsapp">
@@ -65,7 +64,7 @@
                             class="btns contact-btn"
                             @click="showConnection"
                         >
-                            Связаться
+                            Заявка на консультацию
                         </button>
                     </div>
                 </div>
@@ -117,9 +116,8 @@ export default {
 }
 
 .navbar__list {
-    /* display: flex;
-    justify-content: space-between; */
-    font-size: 14px;
+    width: 720px;
+    font-size: 16px;
     font-weight: 400;
     text-decoration: none;
 }
@@ -146,6 +144,15 @@ export default {
     justify-content: space-between;
     align-items: center;
     gap: 8px;
+}
+
+.contact_as{
+    font-size: 16px;
+}
+
+.contact_as_tel{
+    font-size: 16px;
+    padding-bottom: 5px;
 }
 
 .wtsapp-btn {
@@ -281,7 +288,7 @@ router-link {
     .navbar__list {
         display: flex;
         justify-content: space-between;
-        font-size: 14px;
+        font-size: 16px;
     }
     .work-titel-top {
         margin-left: 100px;

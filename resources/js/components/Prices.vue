@@ -2,11 +2,6 @@
     <div id="prices">
         <div class="container">
             <div class="prices">
-                <div>
-                    Стоимость лицензии на 12 пользователей составляет от 399 000
-                    рублей,<br />
-                    на 50 пользователей - от 799 000 рублей.
-                </div>
                 <div class="maintitle">
                     Ценообразование ULAB формируется при учете следующих
                     факторов
@@ -18,7 +13,7 @@
             <div class="icons">
                 <div class="icon">
                     <img src="../../../public/img/icon-arrow.png" alt="" />
-                    <div class="icon-text">Базовый функционал <br />U-Lab</div>
+                    <div class="icon-text">Базовый функционал <br />ULAB</div>
                 </div>
                 <div class="icon icon-bird">
                     <img src="../../../public/img/icon-bird.png" alt="" />
@@ -34,6 +29,12 @@
                         Персональные <br />доработки системы
                     </div>
                 </div>
+            </div>
+            <div class="price_text">
+                <p>Готовы помочь в цифровизации Вашей лаборатории!</p>
+                <br><br>
+                <p style="padding-bottom: 50px;">Ждём Ваших обращений по телефону и на сайте.</p>
+                
             </div>
         </div>
     </div>
@@ -91,6 +92,17 @@ export default {
     padding: 40px 0;
     color: #ffeeb4;
 }
+
+.price_text{
+    margin-top: 100px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.price_text p {
+    color: #f9b4ff;
+}
+
 .btns {
     border: 1px solid #ffeeb4;
     color: #ffeeb4;

@@ -1,0 +1,9 @@
+@font-face {
+	font-family: 'ruberoid_ultra_light';
+	src: url('Ruberoid-UltraLight.woff2') format('WOFF2'),
+		url('Ruberoid-UltraLight.woff') format('WOFF'),
+		url('Ruberoid-UltraLight.eot') format('EOT'),
+		url('Ruberoid-UltraLight.svg') format('SVG');
+	font-weight: normal;
+	font-style: normal;
+}

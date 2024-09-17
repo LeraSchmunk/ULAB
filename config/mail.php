@@ -45,6 +45,17 @@ return [
             'timeout' => null,
             'local_domain' => env('MAIL_EHLO_DOMAIN'),
         ],
+        'smtp1' => [
+            'transport' => 'smtp',
+            'url' => env('MAIL_URL1'),
+            'host' => env('MAIL_HOST1', 'smtp.mail.ru'),
+            'port' => env('MAIL_PORT1', 465),
+            'encryption' => env('MAIL_ENCRYPTION1', 'ssl'),
+            'username' => env('MAIL_USERNAME1'),
+            'password' => env('MAIL_PASSWORD1'),
+            'timeout' => null,
+            'local_domain' => env('MAIL_EHLO_DOMAIN'),
+        ],
 
         'ses' => [
             'transport' => 'ses',

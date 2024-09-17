@@ -23,3 +23,6 @@ Route::post('/connection', [\App\Http\Controllers\MailController::class,
 
 Route::get('/getLog', [LogsController::class, 'getIP']);
 Route::get('/getFileIp', [LogsController::class, 'vision_ip']);
+Route::get('/privacy_policy', function () {
+    return Storage::download('public/policy.pdf', 'Политика конфиденциальности.pdf');
+});

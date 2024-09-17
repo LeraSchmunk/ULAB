@@ -24,6 +24,8 @@ class MailController extends Controller
             'name' => $request->name,
             'company' => $request->company,
             'number' => $request->number,
+            'city' => $request->city,
+            'position' => $request->position
         ];
 
         Mail::to('i.boldyreva@niistrom.pro')->locale('ru')->send(new ContactMail($details));
